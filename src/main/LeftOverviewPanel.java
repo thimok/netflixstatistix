@@ -5,77 +5,51 @@ import main.util.FontUtil;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import main.util.*;
 
 public class LeftOverviewPanel extends JPanel {
-	private JButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
+	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
 	private MainPanel mainPanel;
 	
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
-		GridBagLayout bag = new GridBagLayout();
-		setLayout(bag);
-		
-		GridBagConstraints c = new GridBagConstraints();
-		
-		Border border = BorderFactory.createEmptyBorder(10, 10, 10, 10);
-		setBorder(border);
-		
-		c.insets = new Insets(10, 10, 10, 10);
+		setLayout(new GridLayout(6,1,0,2));
+		setBorder(BorderFactory.createEmptyBorder(0, 5, 300, 0));
+		setBackground(new Color(20, 20, 20));
 		
 		KnopHandler kh = new KnopHandler();
 		
-		buttonOverviewOne = new JButton("Overview 1");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 0;
+		buttonOverviewOne = new MenuButton("Overview 1");
 		buttonOverviewOne.setFont(FontUtil.FONT_MENU);
 		buttonOverviewOne.addActionListener(kh);
-		add(buttonOverviewOne, c);
+		add(buttonOverviewOne);
 		
-		buttonOverviewTwo = new JButton("Overview 2");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 1;
+		buttonOverviewTwo = new MenuButton("Overview 2");
 		buttonOverviewTwo.setFont(FontUtil.FONT_MENU);
 		buttonOverviewTwo.addActionListener(kh);
-		add(buttonOverviewTwo, c);
+		add(buttonOverviewTwo);
 		
-		buttonOverviewThree = new JButton("Overview 3");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 2;
+		buttonOverviewThree = new MenuButton("Overview 3");
 		buttonOverviewThree.setFont(FontUtil.FONT_MENU);
 		buttonOverviewThree.addActionListener(kh);
-		add(buttonOverviewThree, c);
+		add(buttonOverviewThree);
 		
-		buttonOverviewFour = new JButton("Overview 4");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 3;
+		buttonOverviewFour = new MenuButton("Overview 4");
 		buttonOverviewFour.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFour.addActionListener(kh);
-		add(buttonOverviewFour, c);
+		add(buttonOverviewFour);
 		
-		buttonOverviewFive = new JButton("Overview 5");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 4;
+		buttonOverviewFive = new MenuButton("Overview 5");
 		buttonOverviewFive.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFive.addActionListener(kh);
-		add(buttonOverviewFive, c);
+		add(buttonOverviewFive);
 		
-		buttonOverviewSix = new JButton("Overview 6");
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 5;
+		buttonOverviewSix = new MenuButton("Overview 6");
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);
 		buttonOverviewSix.addActionListener(kh);
-		add(buttonOverviewSix, c);
-		
-		setBackground(Color.RED);
+		add(buttonOverviewSix);
 	}
 	
 	class KnopHandler implements ActionListener {
