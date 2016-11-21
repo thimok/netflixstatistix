@@ -20,7 +20,7 @@ public class MenuButton extends JButton {
 		super.setFocusPainted(false);
 		super.setForeground(textColor);
 		super.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		
+		super.setPreferredSize(new Dimension(300, 60));
 		Border padding = BorderFactory.createEmptyBorder(5, 30, 5, 30);
 		
 		super.setBorder(padding);

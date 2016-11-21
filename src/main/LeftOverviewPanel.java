@@ -15,8 +15,8 @@ public class LeftOverviewPanel extends JPanel {
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
-		setLayout(new GridLayout(6,1,0,2));
-		setBorder(BorderFactory.createEmptyBorder(0, 5, 300, 0));
+		setLayout(new GridLayout(6,1));
+		//setBorder(BorderFactory.createEmptyBorder(0, 5, 300, 0));
 		setBackground(new Color(33, 33, 33));
 		
 		KnopHandler kh = new KnopHandler();
