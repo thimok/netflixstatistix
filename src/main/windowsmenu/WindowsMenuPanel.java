@@ -41,8 +41,6 @@ public class WindowsMenuPanel extends JPanel {
 		user.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(user);
 		
-		
-		
 		setBackground(new Color(33,33,33));
 	}
 }
