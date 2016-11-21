@@ -20,7 +20,7 @@ public class WindowsMenuPanel extends JPanel {
 		Border b = BorderFactory.createEmptyBorder(10, 10, 10, 10);
 		setBorder(b);
 		
-		title = new JLabel("Statistix and chill " + StringUtil.VERSION + " (for " + System.getProperty("os.name") + ") - Welcome back, " + System.getProperty("user.name") + "!");
+		title = new JLabel("Statistix and chill " + StringUtil.VERSION + " (for " + System.getProperty("os.name") + ") | Welcome back, " + System.getProperty("user.name") + "!");
 		title.setFont(FontUtil.FONT_MENUBAR);
 		title.setForeground(Color.BLACK);
 		add(title, BorderLayout.WEST);

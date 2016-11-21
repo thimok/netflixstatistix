@@ -6,6 +6,6 @@ import java.awt.*;
 public class OverviewOnePanel extends JPanel {
 	
 	public OverviewOnePanel() {
-		setBackground(Color.RED);
+		
 	}
 }

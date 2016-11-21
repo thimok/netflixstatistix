@@ -6,6 +6,6 @@ import java.awt.*;
 public class OverviewFourPanel extends JPanel {
 	
 	public OverviewFourPanel() {
-		setBackground(Color.GREEN);
+		
 	}
 }

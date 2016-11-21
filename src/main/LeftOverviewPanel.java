@@ -21,32 +21,32 @@ public class LeftOverviewPanel extends JPanel {
 		
 		KnopHandler kh = new KnopHandler();
 		
-		buttonOverviewOne = new MenuButton("Overview 1");
+		buttonOverviewOne = new MenuButton("Serie statistix");
 		buttonOverviewOne.setFont(FontUtil.FONT_MENU);
 		buttonOverviewOne.addActionListener(kh);
 		add(buttonOverviewOne);
 		
-		buttonOverviewTwo = new MenuButton("Overview 2");
+		buttonOverviewTwo = new MenuButton("User and serie statistix");
 		buttonOverviewTwo.setFont(FontUtil.FONT_MENU);
 		buttonOverviewTwo.addActionListener(kh);
 		add(buttonOverviewTwo);
 		
-		buttonOverviewThree = new MenuButton("Overview 3");
+		buttonOverviewThree = new MenuButton("Movies watched by user");
 		buttonOverviewThree.setFont(FontUtil.FONT_MENU);
 		buttonOverviewThree.addActionListener(kh);
 		add(buttonOverviewThree);
 		
-		buttonOverviewFour = new MenuButton("Overview 4");
+		buttonOverviewFour = new MenuButton("Longest movies for under 16s");
 		buttonOverviewFour.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFour.addActionListener(kh);
 		add(buttonOverviewFour);
 		
-		buttonOverviewFive = new MenuButton("Overview 5");
+		buttonOverviewFive = new MenuButton("Lonely accounts (equals profit)");
 		buttonOverviewFive.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFive.addActionListener(kh);
 		add(buttonOverviewFive);
 		
-		buttonOverviewSix = new MenuButton("Overview 6");
+		buttonOverviewSix = new MenuButton("Movie popularity check");
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);
 		buttonOverviewSix.addActionListener(kh);
 		add(buttonOverviewSix);
