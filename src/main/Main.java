@@ -1,5 +1,7 @@
 package main;
 
+import main.util.StringUtil;
+
 import javax.swing.*;
 
 public class Main extends JFrame {
@@ -8,7 +10,7 @@ public class Main extends JFrame {
 		JFrame frame = new Main();
 		frame.setBounds(100, 100, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("Statistix and chill + test");
+		frame.setTitle("Statistix and chill " + StringUtil.VERSION);
 		frame.setContentPane(new MainPanel());
 		frame.setVisible(true);
 	}
