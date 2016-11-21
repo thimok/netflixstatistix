@@ -24,7 +24,7 @@ public class MainPanel extends JPanel {
 	private OverviewSixPanel sixPanel;
 	private JLabel placeholder;
 	private JFrame mainFrame;
-	
+
 	public MainPanel(JFrame mainFrame) {
 		setLayout(new BorderLayout());
 		
