@@ -9,6 +9,7 @@ public class Main extends JFrame {
 		frame.setBounds(100, 100, 1000, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Statistix and chill");
+		frame.setContentPane(new MainPanel());
 		frame.setVisible(true);
 	}
 }
