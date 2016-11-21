@@ -50,6 +50,6 @@ public class FooterPanel extends JPanel {
 		footerNames.setFont(FontUtil.FONT_FOOTER);
 		add(footerNames);
 		
-		setBackground(Color.GREEN);
+		setBackground(Color.ORANGE);
 	}
 }
