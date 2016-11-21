@@ -15,8 +15,8 @@ public class LeftOverviewPanel extends JPanel {
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
-		setLayout(new GridLayout(6,1));
-		//setBorder(BorderFactory.createEmptyBorder(0, 5, 300, 0));
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		setBackground(new Color(33, 33, 33));
 		
 		KnopHandler kh = new KnopHandler();
@@ -26,25 +26,35 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewOne.addActionListener(kh);
 		add(buttonOverviewOne);
 		
+		add(Box.createVerticalStrut(10));
+		
 		buttonOverviewTwo = new MenuButton("Overview 2");
 		buttonOverviewTwo.setFont(FontUtil.FONT_MENU);
 		buttonOverviewTwo.addActionListener(kh);
 		add(buttonOverviewTwo);
+		
+		add(Box.createVerticalStrut(10));
 		
 		buttonOverviewThree = new MenuButton("Overview 3");
 		buttonOverviewThree.setFont(FontUtil.FONT_MENU);
 		buttonOverviewThree.addActionListener(kh);
 		add(buttonOverviewThree);
 		
+		add(Box.createVerticalStrut(10));
+		
 		buttonOverviewFour = new MenuButton("Overview 4");
 		buttonOverviewFour.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFour.addActionListener(kh);
 		add(buttonOverviewFour);
 		
+		add(Box.createVerticalStrut(10));
+		
 		buttonOverviewFive = new MenuButton("Overview 5");
 		buttonOverviewFive.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFive.addActionListener(kh);
 		add(buttonOverviewFive);
+		
+		add(Box.createVerticalStrut(10));
 		
 		buttonOverviewSix = new MenuButton("Overview 6");
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);

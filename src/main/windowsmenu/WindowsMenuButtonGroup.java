@@ -1,6 +1,6 @@
 package main.windowsmenu;
 
-import main.util.MenuButton;
+import main.util.WindowsMenuButton;
 import main.util.StateUtil;
 
 import javax.swing.*;
@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WindowsMenuButtonGroup extends JPanel {
-	private MenuButton minimizeButton, sizeButton, closeButton;
+	private WindowsMenuButton minimizeButton, sizeButton, closeButton;
 	private JFrame mainFrame;
 	private boolean fullscreen = true;
 	
@@ -17,18 +17,21 @@ public class WindowsMenuButtonGroup extends JPanel {
 		this.mainFrame = mainFrame;
 		
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		this.setBackground(new Color(33,33,33));
+		
+		add(Box.createHorizontalGlue());
 		
 		KnopHandler kh = new KnopHandler();
 		
-		minimizeButton = new MenuButton("-");
+		minimizeButton = new WindowsMenuButton("-");
 		minimizeButton.addActionListener(kh);
 		add(minimizeButton);
 		
-		sizeButton = new MenuButton("[]");
+		sizeButton = new WindowsMenuButton("[]");
 		sizeButton.addActionListener(kh);
 		add(sizeButton);
 		
-		closeButton = new MenuButton("x");
+		closeButton = new WindowsMenuButton("x");
 		closeButton.addActionListener(kh);
 		add(closeButton);
 	}
