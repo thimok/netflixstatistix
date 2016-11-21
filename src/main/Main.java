@@ -1,12 +1,14 @@
 package main;
 
-public class Main {
+import javax.swing.*;
+
+public class Main extends JFrame {
 	
 	public static void main(String[] args) {
-		System.out.println("Hello Yakup!");
-		System.out.println("Sven dit hoort gewoon te werken.");
-		System.out.println("Dus het wordt lekker chillen met netflix");
-		System.out.println("Ja man. Gezellig, maar wel zonder Yakup hoor.");
-		System.out.println("Chillen met yakup = geen schillen xxx");
+		JFrame frame = new Main();
+		frame.setBounds(100, 100, 1000, 750);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Statistix and chill");
+		frame.setVisible(true);
 	}
 }
