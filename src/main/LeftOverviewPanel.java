@@ -10,8 +10,11 @@ import java.awt.event.ActionListener;
 
 public class LeftOverviewPanel extends JPanel {
 	private JButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
+	private MainPanel mainPanel;
 	
-	public LeftOverviewPanel() {
+	public LeftOverviewPanel(MainPanel mp) {
+		this.mainPanel = mp;
+		
 		GridBagLayout bag = new GridBagLayout();
 		setLayout(bag);
 		
@@ -78,7 +81,19 @@ public class LeftOverviewPanel extends JPanel {
 	class KnopHandler implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+			if (e.getSource() == buttonOverviewOne) {
+				mainPanel.showOne();
+			} else if (e.getSource() == buttonOverviewTwo) {
+				mainPanel.showTwo();
+			} else if (e.getSource() == buttonOverviewThree) {
+				mainPanel.showThree();
+			} else if (e.getSource() == buttonOverviewFour) {
+				mainPanel.showFour();
+			} else if (e.getSource() == buttonOverviewFive) {
+				mainPanel.showFive();
+			} else if (e.getSource() == buttonOverviewSix) {
+				mainPanel.showSix();
+			}
 		}
 	}
 }

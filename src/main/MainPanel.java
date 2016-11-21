@@ -23,7 +23,7 @@ public class MainPanel extends JPanel {
 	public MainPanel() {
 		setLayout(new BorderLayout());
 		
-		leftControl = new LeftOverviewPanel();
+		leftControl = new LeftOverviewPanel(this);
 		footerPanel = new FooterPanel();
 		onePanel = new OverviewOnePanel();
 		twoPanel = new OverviewTwoPanel();
@@ -34,5 +34,65 @@ public class MainPanel extends JPanel {
 		
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
+	}
+	
+	public void reset() {
+		remove(onePanel);
+		remove(twoPanel);
+		remove(threePanel);
+		remove(fourPanel);
+		remove(fivePanel);
+		remove(sixPanel);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showOne() {
+		reset();
+		add(onePanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showTwo() {
+		reset();
+		add(twoPanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showThree() {
+		reset();
+		add(threePanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showFour() {
+		reset();
+		add(fourPanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showFive() {
+		reset();
+		add(fivePanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showSix() {
+		reset();
+		add(sixPanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
 	}
 }
