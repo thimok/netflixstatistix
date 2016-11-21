@@ -7,6 +7,7 @@ import main.overviewsix.OverviewSixPanel;
 import main.overviewthree.OverviewThreePanel;
 import main.overviewtwo.OverviewTwoPanel;
 import main.util.FontUtil;
+import main.windowsmenu.WindowsMenuPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ import java.awt.*;
 public class MainPanel extends JPanel {
 	private LeftOverviewPanel leftControl;
 	private FooterPanel footerPanel;
+	private WindowsMenuPanel windowsMenuPanel;
 	private OverviewOnePanel onePanel;
 	private OverviewTwoPanel twoPanel;
 	private OverviewThreePanel threePanel;
@@ -21,12 +23,16 @@ public class MainPanel extends JPanel {
 	private OverviewFivePanel fivePanel;
 	private OverviewSixPanel sixPanel;
 	private JLabel placeholder;
+	private JFrame mainFrame;
 	
-	public MainPanel() {
+	public MainPanel(JFrame mainFrame) {
 		setLayout(new BorderLayout());
+		
+		this.mainFrame = mainFrame;
 		
 		leftControl = new LeftOverviewPanel(this);
 		footerPanel = new FooterPanel();
+		windowsMenuPanel = new WindowsMenuPanel(mainFrame);
 		onePanel = new OverviewOnePanel();
 		twoPanel = new OverviewTwoPanel();
 		threePanel = new OverviewThreePanel();
@@ -34,10 +40,11 @@ public class MainPanel extends JPanel {
 		fivePanel = new OverviewFivePanel();
 		sixPanel = new OverviewSixPanel();
 		
-		placeholder = new JLabel("Click an item on the left...");
+		placeholder = new JLabel("Click an item on the left to view the statistix...");
 		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
 		placeholder.setHorizontalAlignment(JLabel.CENTER);
 		
+		add(windowsMenuPanel, BorderLayout.NORTH);
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
 		add(placeholder, BorderLayout.CENTER);

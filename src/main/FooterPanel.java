@@ -13,38 +13,42 @@ public class FooterPanel extends JPanel {
 	public FooterPanel() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		GridBagLayout bag = new GridBagLayout();
-		setLayout(bag);
-		
 		Border b = BorderFactory.createEmptyBorder(10, 10, 10, 10);
 		setBorder(b);
 		
-		GridBagConstraints c = new GridBagConstraints();
-		c.insets = new Insets(20, 20, 20, 20);
-		
 		footerTitle = new JLabel("Netflix Statistix");
 		footerTitle.setFont(FontUtil.FONT_FOOTER);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		add(footerTitle, c);
+		add(footerTitle);
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
+		
+		add(new JSeparator(JSeparator.VERTICAL));
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
 		
 		footerCourse = new JLabel("Informatica 1.2");
 		footerCourse.setFont(FontUtil.FONT_FOOTER);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 1;
-		add(footerCourse, c);
+		add(footerCourse);
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
+		
+		add(new JSeparator(JSeparator.VERTICAL));
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
 		
 		footerClass = new JLabel("23ivt1c");
 		footerClass.setFont(FontUtil.FONT_FOOTER);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 2;
-		add(footerClass, c);
+		add(footerClass);
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
+		
+		add(new JSeparator(JSeparator.VERTICAL));
+		
+		add(Box.createRigidArea(new Dimension(25, 0)));
 		
 		footerNames = new JLabel("Sven / Devon / Thimo");
 		footerNames.setFont(FontUtil.FONT_FOOTER);
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 3;
-		add(footerNames, c);
+		add(footerNames);
 		
 		setBackground(Color.GREEN);
 	}
