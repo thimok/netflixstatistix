@@ -6,6 +6,7 @@ import main.overviewone.OverviewOnePanel;
 import main.overviewsix.OverviewSixPanel;
 import main.overviewthree.OverviewThreePanel;
 import main.overviewtwo.OverviewTwoPanel;
+import main.util.FontUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class MainPanel extends JPanel {
 	private OverviewFourPanel fourPanel;
 	private OverviewFivePanel fivePanel;
 	private OverviewSixPanel sixPanel;
+	private JLabel placeholder;
 	
 	public MainPanel() {
 		setLayout(new BorderLayout());
@@ -32,8 +34,13 @@ public class MainPanel extends JPanel {
 		fivePanel = new OverviewFivePanel();
 		sixPanel = new OverviewSixPanel();
 		
+		placeholder = new JLabel("Click an item on the left...");
+		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
+		placeholder.setHorizontalAlignment(JLabel.CENTER);
+		
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
+		add(placeholder, BorderLayout.CENTER);
 	}
 	
 	public void reset() {
@@ -43,6 +50,7 @@ public class MainPanel extends JPanel {
 		remove(fourPanel);
 		remove(fivePanel);
 		remove(sixPanel);
+		remove(placeholder);
 		
 		revalidate();
 		repaint();
