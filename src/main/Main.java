@@ -8,7 +8,7 @@ public class Main extends JFrame {
 	
 	public static void main(String[] args) {
 		JFrame frame = new Main();
-		frame.setBounds(100, 100, 1000, 750);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Statistix and chill " + StringUtil.VERSION);
 		frame.setContentPane(new MainPanel());
