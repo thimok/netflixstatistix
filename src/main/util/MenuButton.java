@@ -5,10 +5,10 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class MenuButton extends JButton {
-	private Color hover = new Color(239, 83, 80);
-	private Color clicked = new Color(229, 57, 53);
-	private Color standard = new Color(244, 67, 54);
-	private Color textColor = new Color(33, 33, 33);
+	private Color hover = new Color(240, 240, 240, 20);
+	private Color clicked = new Color(240, 240, 240, 80);
+	private Color standard = new Color(33, 33, 33);
+	private Color textColor = new Color(240, 240, 240, 230);
 	
 	public MenuButton() {
 		this(null);
