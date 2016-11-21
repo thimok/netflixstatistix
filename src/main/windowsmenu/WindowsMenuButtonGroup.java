@@ -1,6 +1,7 @@
 package main.windowsmenu;
 
 import main.util.MenuButton;
+import main.util.StateUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,13 +41,14 @@ public class WindowsMenuButtonGroup extends JPanel {
 			} else if (e.getSource() == sizeButton) {
 				mainFrame.dispose();
 				if (WindowsMenuButtonGroup.this.fullscreen) {
-					//mainFrame.setUndecorated(false);
 					mainFrame.setExtendedState(Frame.NORMAL);
 					WindowsMenuButtonGroup.this.fullscreen = false;
+					StateUtil.CANMOVE = true;
+					
 				} else {
-					//mainFrame.setUndecorated(true);
 					mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
 					WindowsMenuButtonGroup.this.fullscreen = true;
+					StateUtil.CANMOVE = false;
 				}
 				mainFrame.pack();
 				mainFrame.setVisible(true);
