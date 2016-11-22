@@ -4,7 +4,6 @@ import main.util.FontUtil;
 import main.util.StringUtil;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class WindowsMenuPanel extends JPanel {

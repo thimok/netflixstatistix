@@ -2,6 +2,8 @@ package main.windowsmenu;
 
 import main.util.WindowsMenuButton;
 import main.util.StateUtil;
+import main.util.jiconfont.icons.FontAwesome;
+import main.util.jiconfont.swing.IconFontSwing;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +16,12 @@ public class WindowsMenuButtonGroup extends JPanel {
 	private boolean fullscreen = true;
 	
 	public WindowsMenuButtonGroup(JFrame mainFrame) {
+		IconFontSwing.register(FontAwesome.getIconFont());
+		Icon wr = IconFontSwing.buildIcon(FontAwesome.WINDOW_RESTORE, 10, new Color(250, 250, 250));
+		Icon min = IconFontSwing.buildIcon(FontAwesome.WINDOW_MINIMIZE, 10, new Color(250, 250, 250));
+		Icon close = IconFontSwing.buildIcon(FontAwesome.TIMES, 10, new Color(250, 250, 250));
+		
+		
 		this.mainFrame = mainFrame;
 		
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -23,15 +31,15 @@ public class WindowsMenuButtonGroup extends JPanel {
 		
 		KnopHandler kh = new KnopHandler();
 		
-		minimizeButton = new WindowsMenuButton("-");
+		minimizeButton = new WindowsMenuButton(min);
 		minimizeButton.addActionListener(kh);
 		add(minimizeButton);
 		
-		sizeButton = new WindowsMenuButton("[]");
+		sizeButton = new WindowsMenuButton(wr);
 		sizeButton.addActionListener(kh);
 		add(sizeButton);
 		
-		closeButton = new WindowsMenuButton("x");
+		closeButton = new WindowsMenuButton(close);
 		closeButton.addActionListener(kh);
 		add(closeButton);
 	}

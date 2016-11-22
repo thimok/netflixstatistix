@@ -12,11 +12,11 @@ public class WindowsMenuButton extends JButton {
 	private Dimension size = new Dimension(70,30);
 	
 	public WindowsMenuButton() {
-		this(null);
+		super();
 	}
 	
-	public WindowsMenuButton(String text) {
-		super(text);
+	public WindowsMenuButton(Icon icon) {
+		super(icon);
 		super.setContentAreaFilled(false);
 		super.setFocusPainted(false);
 		super.setForeground(textColor);
