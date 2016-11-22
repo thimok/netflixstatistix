@@ -12,7 +12,7 @@ public class FooterPanel extends JPanel {
 	
 	public FooterPanel() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		setBorder(BorderFactory.createEmptyBorder(10, 40, 10, 25));
+		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
 		
 		footerTitle = new JLabel(StringUtil.COPYRIGHT);
 		footerTitle.setFont(FontUtil.FONT_FOOTER);

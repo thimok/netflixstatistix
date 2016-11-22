@@ -11,14 +11,14 @@ import main.util.*;
 public class LeftOverviewPanel extends JPanel {
 	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
 	private MainPanel mainPanel;
-	private Dimension sizeSingle = new Dimension(200,30);
-	private Dimension sizeDouble = new Dimension(200,60);
+	private Dimension sizeSingle = new Dimension(150,30);
+	private Dimension sizeDouble = new Dimension(150,50);
 	
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		setBorder(BorderFactory.createEmptyBorder(5, 5, 15, 20));
 		setBackground(new Color(33, 33, 33));
 		
 		KnopHandler kh = new KnopHandler();
@@ -63,7 +63,7 @@ public class LeftOverviewPanel extends JPanel {
 		
 		add(Box.createVerticalStrut(10));
 		
-		buttonOverviewSix = new MenuButton(StringUtil.OVERVIEW_SIX, sizeSingle);
+		buttonOverviewSix = new MenuButton(StringUtil.OVERVIEW_SIX, sizeDouble);
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);
 		buttonOverviewSix.addActionListener(kh);
 		//buttonOverviewSix.setToolTipText(StringUtil.OVERVIEW_SIX);
