@@ -2,9 +2,9 @@ package main;
 
 import main.util.FontUtil;
 import main.util.StringUtil;
+import main.util.ColorUtil;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class FooterPanel extends JPanel {
@@ -13,6 +13,7 @@ public class FooterPanel extends JPanel {
 	public FooterPanel() {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
+		setBackground(ColorUtil.BACKGROUND_MAIN);
 		
 		footerTitle = new JLabel(StringUtil.COPYRIGHT);
 		footerTitle.setFont(FontUtil.FONT_FOOTER);
@@ -37,7 +38,5 @@ public class FooterPanel extends JPanel {
 		footerClass.setFont(FontUtil.FONT_FOOTER);
 		footerClass.setForeground(new Color(250,250,250));
 		add(footerClass);
-		
-		setBackground(new Color(33,33,33));
 	}
 }

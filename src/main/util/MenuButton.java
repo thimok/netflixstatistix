@@ -5,16 +5,12 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class MenuButton extends JButton {
-	private Color hover = new Color(240, 240, 240, 20);
-	private Color clicked = new Color(240, 240, 240, 80);
-	private Color standard = new Color(33, 33, 33);
-	private Color textColor = new Color(244, 67, 54);
 	
 	public MenuButton(String text, Dimension size) {
 		super(text);
 		super.setContentAreaFilled(false);
 		super.setFocusPainted(false);
-		super.setForeground(textColor);
+		super.setForeground(ColorUtil.BUTTON_TEXT);
 		super.setHorizontalAlignment(JButton.LEFT);
 		super.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		super.setPreferredSize(size);
@@ -28,11 +24,11 @@ public class MenuButton extends JButton {
 	@Override
 	protected void paintComponent(Graphics g) {
 		if (getModel().isPressed()) {
-			g.setColor(clicked);
+			g.setColor(ColorUtil.BUTTON_CLICK);
 		} else if (getModel().isRollover()) {
-			g.setColor(hover);
+			g.setColor(ColorUtil.BUTTON_HOVER);
 		} else {
-			g.setColor(standard);
+			g.setColor(ColorUtil.BACKGROUND);
 		}
 		g.fillRect(0, 0, getWidth(), getHeight());
 		super.paintComponent(g);

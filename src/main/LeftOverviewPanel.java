@@ -3,10 +3,10 @@ package main;
 import main.util.FontUtil;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import main.util.*;
+import main.util.ColorUtil;
 
 public class LeftOverviewPanel extends JPanel {
 	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
@@ -19,7 +19,7 @@ public class LeftOverviewPanel extends JPanel {
 		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(BorderFactory.createEmptyBorder(5, 5, 15, 20));
-		setBackground(new Color(33, 33, 33));
+		setBackground(ColorUtil.BACKGROUND);
 		
 		KnopHandler kh = new KnopHandler();
 		
