@@ -25,7 +25,7 @@ public class WindowsMenuButtonGroup extends JPanel {
 		this.close = IconFontSwing.buildIcon(FontAwesome.TIMES, 10, ColorUtil.MAIN_TEXT);
 		this.wr = IconFontSwing.buildIcon(FontAwesome.WINDOW_RESTORE, 10, ColorUtil.MAIN_TEXT);
 		this.max = IconFontSwing.buildIcon(FontAwesome.WINDOW_MAXIMIZE, 10, ColorUtil.MAIN_TEXT);
-		this.favicon = IconFontSwing.buildIcon(FontAwesome.AREA_CHART, 15, ColorUtil.TITLE);
+		this.favicon = IconFontSwing.buildIcon(FontAwesome.BAR_CHART, 15, ColorUtil.TITLE);
 		
 		this.mainFrame = mainFrame;
 		
