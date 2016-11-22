@@ -9,22 +9,18 @@ public class MenuButton extends JButton {
 	private Color clicked = new Color(240, 240, 240, 80);
 	private Color standard = new Color(33, 33, 33);
 	private Color textColor = new Color(244, 67, 54);
-	private Dimension size = new Dimension(200,30);
 	
-	public MenuButton() {
-		this(null);
-	}
-	
-	public MenuButton(String text) {
+	public MenuButton(String text, Dimension size) {
 		super(text);
 		super.setContentAreaFilled(false);
 		super.setFocusPainted(false);
 		super.setForeground(textColor);
+		super.setHorizontalAlignment(JButton.LEFT);
 		super.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		super.setPreferredSize(size);
 		super.setMinimumSize(size);
 		super.setMaximumSize(size);
-		Border padding = BorderFactory.createEmptyBorder(5, 30, 5, 30);
+		Border padding = BorderFactory.createEmptyBorder(5, 5, 5, 5);
 		
 		super.setBorder(padding);
 	}

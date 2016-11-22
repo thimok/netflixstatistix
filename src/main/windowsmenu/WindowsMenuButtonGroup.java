@@ -14,13 +14,14 @@ public class WindowsMenuButtonGroup extends JPanel {
 	private WindowsMenuButton minimizeButton, sizeButton, closeButton;
 	private JFrame mainFrame;
 	private boolean fullscreen = true;
+	private Icon max, wr, min, close;
 	
 	public WindowsMenuButtonGroup(JFrame mainFrame) {
 		IconFontSwing.register(FontAwesome.getIconFont());
-		Icon wr = IconFontSwing.buildIcon(FontAwesome.WINDOW_RESTORE, 10, new Color(250, 250, 250));
-		Icon min = IconFontSwing.buildIcon(FontAwesome.WINDOW_MINIMIZE, 10, new Color(250, 250, 250));
-		Icon close = IconFontSwing.buildIcon(FontAwesome.TIMES, 10, new Color(250, 250, 250));
-		
+		this.min = IconFontSwing.buildIcon(FontAwesome.WINDOW_MINIMIZE, 10, new Color(250, 250, 250));
+		this.close = IconFontSwing.buildIcon(FontAwesome.TIMES, 10, new Color(250, 250, 250));
+		this.wr = IconFontSwing.buildIcon(FontAwesome.WINDOW_RESTORE, 10, new Color(250, 250, 250));
+		this.max = IconFontSwing.buildIcon(FontAwesome.WINDOW_MAXIMIZE, 10, new Color(250, 250, 250));
 		
 		this.mainFrame = mainFrame;
 		
@@ -55,11 +56,13 @@ public class WindowsMenuButtonGroup extends JPanel {
 					mainFrame.setExtendedState(Frame.NORMAL);
 					WindowsMenuButtonGroup.this.fullscreen = false;
 					StateUtil.CANMOVE = true;
+					sizeButton.setIcon(max);
 					
 				} else {
 					mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
 					WindowsMenuButtonGroup.this.fullscreen = true;
 					StateUtil.CANMOVE = false;
+					sizeButton.setIcon(wr);
 				}
 				mainFrame.pack();
 				mainFrame.setVisible(true);

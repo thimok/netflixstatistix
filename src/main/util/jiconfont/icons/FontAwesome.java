@@ -634,7 +634,8 @@ public enum FontAwesome implements IconCode {
     YOUTUBE_SQUARE('\uF166'),
     Y_COMBINATOR('\uF23B'),
     WINDOW_RESTORE('\uF2D2'),
-    WINDOW_MINIMIZE('\uF2D1');
+    WINDOW_MINIMIZE('\uF2D1'),
+    WINDOW_MAXIMIZE('\uF2D0');
 
     private final char character;
 

@@ -13,6 +13,16 @@ public class WindowsMenuButton extends JButton {
 	
 	public WindowsMenuButton() {
 		super();
+		super.setContentAreaFilled(false);
+		super.setFocusPainted(false);
+		super.setForeground(textColor);
+		super.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		super.setPreferredSize(size);
+		super.setMinimumSize(size);
+		super.setMaximumSize(size);
+		Border padding = BorderFactory.createEmptyBorder(5, 30, 5, 30);
+		
+		super.setBorder(padding);
 	}
 	
 	public WindowsMenuButton(Icon icon) {

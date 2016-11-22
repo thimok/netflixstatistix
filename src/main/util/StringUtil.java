@@ -10,9 +10,9 @@ public class StringUtil {
 	
 	//Menu buttons
 	public static final String OVERVIEW_ONE = "Serie statistix";
-	public static final String OVERVIEW_TWO = "User and serie statistix";
-	public static final String OVERVIEW_THREE = "Movies watched by user";
-	public static final String OVERVIEW_FOUR = "Longest movies for under 16s";
-	public static final String OVERVIEW_FIVE = "Lonely accounts (equals profit)";
-	public static final String OVERVIEW_SIX = "Movie populairty check";
+	public static final String OVERVIEW_TWO = "<html>User and<br>serie statistix</html>";
+	public static final String OVERVIEW_THREE = "<html>Movies watched<br>by user</html>";
+	public static final String OVERVIEW_FOUR = "<html>Longest movies<br>for under 16s</html>";
+	public static final String OVERVIEW_FIVE = "<html>Lonely accounts<br><small><i>(equals profit)</i></small></html>";
+	public static final String OVERVIEW_SIX = "Movie popularity check";
 }
