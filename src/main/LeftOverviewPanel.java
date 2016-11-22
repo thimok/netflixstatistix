@@ -21,42 +21,49 @@ public class LeftOverviewPanel extends JPanel {
 		
 		KnopHandler kh = new KnopHandler();
 		
-		buttonOverviewOne = new MenuButton("Serie statistix");
+		buttonOverviewOne = new MenuButton(StringUtil.OVERVIEW_ONE);
 		buttonOverviewOne.setFont(FontUtil.FONT_MENU);
 		buttonOverviewOne.addActionListener(kh);
+		buttonOverviewOne.setToolTipText(StringUtil.OVERVIEW_ONE);
 		add(buttonOverviewOne);
 		
 		add(Box.createVerticalStrut(10));
 		
-		buttonOverviewTwo = new MenuButton("User and serie statistix");
+		buttonOverviewTwo = new MenuButton(StringUtil.OVERVIEW_TWO);
 		buttonOverviewTwo.setFont(FontUtil.FONT_MENU);
 		buttonOverviewTwo.addActionListener(kh);
+		buttonOverviewTwo.setToolTipText(StringUtil.OVERVIEW_TWO);
 		add(buttonOverviewTwo);
 		
 		add(Box.createVerticalStrut(10));
 		
-		buttonOverviewThree = new MenuButton("Movies watched by user");
+		buttonOverviewThree = new MenuButton(StringUtil.OVERVIEW_THREE);
 		buttonOverviewThree.setFont(FontUtil.FONT_MENU);
 		buttonOverviewThree.addActionListener(kh);
+		buttonOverviewThree.setToolTipText(StringUtil.OVERVIEW_THREE);
 		add(buttonOverviewThree);
+		
 		add(Box.createVerticalStrut(10));
 		
-		buttonOverviewFour = new MenuButton("Longest movies for under 16s");
+		buttonOverviewFour = new MenuButton(StringUtil.OVERVIEW_FOUR);
 		buttonOverviewFour.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFour.addActionListener(kh);
+		buttonOverviewFour.setToolTipText(StringUtil.OVERVIEW_FOUR);
 		add(buttonOverviewFour);
 		
 		add(Box.createVerticalStrut(10));
 
-		buttonOverviewFive = new MenuButton("Lonely accounts (equals profit)");
+		buttonOverviewFive = new MenuButton(StringUtil.OVERVIEW_FIVE);
 		buttonOverviewFive.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFive.addActionListener(kh);
+		buttonOverviewFive.setToolTipText(StringUtil.OVERVIEW_FIVE);
 		add(buttonOverviewFive);
 		add(Box.createVerticalStrut(10));
 		
-		buttonOverviewSix = new MenuButton("Movie popularity check");
+		buttonOverviewSix = new MenuButton(StringUtil.OVERVIEW_SIX);
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);
 		buttonOverviewSix.addActionListener(kh);
+		buttonOverviewSix.setToolTipText(StringUtil.OVERVIEW_SIX);
 		add(buttonOverviewSix);
 	}
 	
