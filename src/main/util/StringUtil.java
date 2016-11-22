@@ -2,7 +2,7 @@ package main.util;
 
 public class StringUtil {
 	//General Strings
-	public static final String VERSION = "v0.2.0";
+	public static final String VERSION = "v0.2.1";
 	public static final String COPYRIGHT = "© Netflix Statistix";
 	public static final String COURSE = "Informatica 1.2";
 	public static final String AUTHORS = "Sven, Devon & Thimo";

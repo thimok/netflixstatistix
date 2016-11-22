@@ -17,7 +17,8 @@ public class MainFrame extends JFrame {
 			public void run() {
 				JFrame frame = MainFrame.this;
 				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				frame.setSize(1000, 1000);
+				frame.setSize(1500, 1000);
+				frame.setPreferredSize(new Dimension(1500, 1000));
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setTitle("Statistix and chill " + StringUtil.VERSION);
 				frame.setContentPane(new MainPanel(frame));
