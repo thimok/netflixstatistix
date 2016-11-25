@@ -16,7 +16,6 @@ public class WindowsMenuButtonGroup extends JPanel {
 	private WindowsMenuButton minimizeButton, sizeButton, closeButton;
 	private JLabel header;
 	private JFrame mainFrame;
-	private boolean fullscreen = true;
 	private Icon max, wr, min, close, favicon;
 	
 	public WindowsMenuButtonGroup(JFrame mainFrame) {
@@ -64,15 +63,15 @@ public class WindowsMenuButtonGroup extends JPanel {
 				mainFrame.setState(Frame.ICONIFIED);
 			} else if (e.getSource() == sizeButton) {
 				mainFrame.dispose();
-				if (WindowsMenuButtonGroup.this.fullscreen) {
+				if (StateUtil.FULLSCREEN) {
 					mainFrame.setExtendedState(Frame.NORMAL);
-					WindowsMenuButtonGroup.this.fullscreen = false;
+					StateUtil.FULLSCREEN = false;
 					StateUtil.CANMOVE = true;
 					sizeButton.setIcon(max);
 					
 				} else {
 					mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
-					WindowsMenuButtonGroup.this.fullscreen = true;
+					StateUtil.FULLSCREEN = true;
 					StateUtil.CANMOVE = false;
 					sizeButton.setIcon(wr);
 				}
