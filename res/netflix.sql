@@ -9,7 +9,9 @@ INSERT INTO abonnement (AbonneeNr, Naam, Adres, Woonplaats) VALUES
 (1, 'Destiny LongHart', 'Middensaw 104', 'Rotterdam'),
 (2, 'Devon Marsham', 'Hindersteinstraat 1', 'Rotterdam'),
 (3, 'Jon Snow', 'Westeros 12', 'Amsterdam'),
-(4, 'Sven blondhaar', 'Pelletroad 2112', 'Kanto Region');
+(4, 'Sven blondhaar', 'Pelletroad 2112', 'Kanto Region'),
+(5, 'Joost Kalen', 'Kerkstraat 18', 'Enschede'),
+(6, 'Henk Pietersen', 'Dijkje 1', 'Groningen');
 
 CREATE TABLE `profiel` (
   `Naam` varchar(20),
@@ -25,14 +27,34 @@ CREATE TABLE `profiel` (
       ON DELETE RESTRICT
 );
 
+INSERT INTO profiel (Naam, Geboortedatum, AbonneeNr) VALUES
+('StoereJoost2008', '2008-08-12', 5),
+('Sven902', '1999-07-31', 4),
+('Henkie', '1990-02-02', 1),
+('Henkie2', '1990-02-02', 1),
+('Kerstman', '1802-12-31', 3),
+('SinterClass', "1994-03-18", 3),
+('DikkeBMW', '1998-02-19', 2),
+('Wolfhunter82', '2005-11-01', 2);
+
 CREATE TABLE `programma` (
   `ID` varchar(20) PRIMARY KEY,
-  `Titel` varchar(20) DEFAULT NULL,
-  `Tijdsduur` date DEFAULT NULL
+  `Titel` varchar(40) DEFAULT NULL,
+  `Tijdsduur` time DEFAULT NULL
 );
 
+INSERT INTO programma (ID, Titel, Tijdsduur) VALUES
+(1, 'Orange Is The New Black', '01:30:00'),
+(2, 'House of Cards', '00:50:00'),
+(3, 'The Wolf Of Wallstreet', '03:00:00'),
+(4, 'Breaking Bad', '00:55:00'),
+(5, 'Superbad', '01:43:00'),
+(6, 'The Godfather', '02:48:00'),
+(7, 'Inception', '02:28:00'),
+(8, 'Up', '01:36:00');
+
 CREATE TABLE `serie` (
-  `Titel` varchar(20) PRIMARY KEY,
+  `Titel` varchar(40) PRIMARY KEY,
   `Genre` varchar(20) DEFAULT NULL,
   `Taal` varchar(20) DEFAULT NULL,
   `Leeftijdsindicatie` varchar(20) DEFAULT NULL,
@@ -47,7 +69,7 @@ CREATE TABLE `serie` (
 CREATE TABLE `aflevering` (
   `ID` varchar(20) PRIMARY KEY,
   `Volgnummer` varchar(20) DEFAULT NULL,
-  `SerieTitel` varchar(20) DEFAULT NULL,
+  `SerieTitel` varchar(40) DEFAULT NULL,
 
   CONSTRAINT
     FOREIGN KEY (Serietitel) REFERENCES `serie` (Titel)
