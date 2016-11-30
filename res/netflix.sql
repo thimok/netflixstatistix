@@ -85,14 +85,21 @@ CREATE TABLE `aflevering` (
 CREATE TABLE `film` (
   `ID` varchar(20) PRIMARY KEY,
   `Genre` varchar(20) DEFAULT NULL,
-  `Taal` varchar(20) DEFAULT NULL,
-  `Leeftijdsindicatie` int(11) DEFAULT NULL,
+  `Taal` varchar(20) DEFAULT 'Engels',
+  `Leeftijdsindicatie` int(2) DEFAULT NULL,
 
   CONSTRAINT
     FOREIGN KEY (ID) REFERENCES `programma` (ID)
       ON UPDATE CASCADE
       ON DELETE RESTRICT
 );
+
+INSERT INTO film (ID, Genre, Taal, Leeftijdsindicatie) VALUES
+(3, 'Misdaad, Komedie', 'Engels', 16),
+(5, 'Komedie', 'Engels', 12),
+(6, 'Misdaad, Drama', 'Engels', 16),
+(7, 'Thriller, Sciencefiction', 'Engels' 12),
+(8, 'Animatie, Avontuur', 'Nederlands', 6);
 
 CREATE TABLE `voortgang` (
   `Profielnaam` varchar(20),
