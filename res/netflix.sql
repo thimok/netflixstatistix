@@ -1,5 +1,7 @@
+DROP TABLE IF EXISTS `film`, `aflevering`, `serie`, `voortgang`, `programma`, `profiel`, `abonnement`;
+
 CREATE TABLE `abonnement` (
-  `AbonneeNr` int(11) PRIMARY KEY,
+  `AbonneeNr` int(10) PRIMARY KEY,
   `Naam` varchar(20) DEFAULT NULL,
   `Adres` varchar(20) DEFAULT NULL,
   `Woonplaats` varchar(20) DEFAULT NULL
@@ -16,7 +18,7 @@ INSERT INTO abonnement (AbonneeNr, Naam, Adres, Woonplaats) VALUES
 CREATE TABLE `profiel` (
   `Naam` varchar(20),
   `Geboortedatum` date DEFAULT NULL,
-  `AbonneeNr` int(11),
+  `AbonneeNr` int(10),
 
   CONSTRAINT
     PRIMARY KEY (Naam, AbonneeNr),
@@ -38,26 +40,29 @@ INSERT INTO profiel (Naam, Geboortedatum, AbonneeNr) VALUES
 ('Wolfhunter82', '2005-11-01', 2);
 
 CREATE TABLE `programma` (
-  `ID` varchar(20) PRIMARY KEY,
+  `ID` int(10) PRIMARY KEY,
   `Titel` varchar(40) DEFAULT NULL,
   `Tijdsduur` time DEFAULT NULL
 );
 
 INSERT INTO programma (ID, Titel, Tijdsduur) VALUES
-(1, 'Orange Is The New Black', '01:30:00'),
-(2, 'House of Cards', '00:50:00'),
+(1, 'Orange Is The New Black S01E01', '01:30:00'),
+(2, 'House of Cards S03E01', '00:50:00'),
 (3, 'The Wolf Of Wallstreet', '03:00:00'),
-(4, 'Breaking Bad', '00:55:00'),
+(4, 'Breaking Bad S02E06', '00:55:00'),
 (5, 'Superbad', '01:43:00'),
 (6, 'The Godfather', '02:48:00'),
 (7, 'Inception', '02:28:00'),
-(8, 'Up', '01:36:00');
+(8, 'Up', '01:36:00'),
+(9, 'Orange Is The New Black S01E02', '01:30:00'),
+(10, 'Orange Is The New Black S01E03', '01:30:00'),
+(11, 'House of Cards S03E02', '00:47:00');
 
 CREATE TABLE `serie` (
   `Titel` varchar(40) PRIMARY KEY,
-  `Genre` varchar(20) DEFAULT NULL,
-  `Taal` varchar(20) DEFAULT NULL,
-  `Leeftijdsindicatie` varchar(20) DEFAULT NULL,
+  `Genre` varchar(40) DEFAULT NULL,
+  `Taal` varchar(20) DEFAULT 'Engels',
+  `Leeftijdsindicatie` int(2) DEFAULT NULL,
   `Gerelateerd` varchar(20) DEFAULT NULL,
 
   CONSTRAINT
@@ -66,9 +71,16 @@ CREATE TABLE `serie` (
       ON DELETE RESTRICT
 );
 
+INSERT INTO serie (Titel, Genre, Leeftijdsindicatie, Gerelateerd) VALUES
+('Orange Is The New Black', 'Komedie, Drama, Misdaad', 18, NULL),
+('House of Cards', 'Drama, Politiek Thriller', 16, 'House of Cards'),
+('Breaking Bad', 'Drama, Misdaad', 17, NULL);
+
+
+
 CREATE TABLE `aflevering` (
-  `ID` varchar(20) PRIMARY KEY,
-  `Volgnummer` varchar(20) DEFAULT NULL,
+  `ID` int(10) PRIMARY KEY,
+  `Volgnummer` int(4) DEFAULT NULL,
   `SerieTitel` varchar(40) DEFAULT NULL,
 
   CONSTRAINT
@@ -82,9 +94,17 @@ CREATE TABLE `aflevering` (
       ON DELETE RESTRICT
 );
 
+INSERT INTO aflevering (ID, Volgnummer, SerieTitel) VALUES
+(1, 0101, 'Orange Is The New Black'),
+(2, 0301, 'House of Cards'),
+(4, 0206, 'Breaking Bad'),
+(9, 0102, 'Orange Is The New Black'),
+(10, 0103, 'Orange Is The New Black'),
+(11, 0302, 'House of Cards');
+
 CREATE TABLE `film` (
-  `ID` varchar(20) PRIMARY KEY,
-  `Genre` varchar(20) DEFAULT NULL,
+  `ID` int(10) PRIMARY KEY,
+  `Genre` varchar(40) DEFAULT NULL,
   `Taal` varchar(20) DEFAULT 'Engels',
   `Leeftijdsindicatie` int(2) DEFAULT NULL,
 
@@ -98,13 +118,14 @@ INSERT INTO film (ID, Genre, Taal, Leeftijdsindicatie) VALUES
 (3, 'Misdaad, Komedie', 'Engels', 16),
 (5, 'Komedie', 'Engels', 12),
 (6, 'Misdaad, Drama', 'Engels', 16),
-(7, 'Thriller, Sciencefiction', 'Engels' 12),
+(7, 'Thriller, Sciencefiction', 'Engels', 12),
 (8, 'Animatie, Avontuur', 'Nederlands', 6);
 
 CREATE TABLE `voortgang` (
   `Profielnaam` varchar(20),
-  `AbonneeNr` int(11),
-  `ProgrammaID` varchar(20),
+  `AbonneeNr` int(10),
+  `ProgrammaID` int(10),
+  `BekekenPercentage` int(3),
 
   CONSTRAINT
     PRIMARY KEY (Profielnaam, AbonneeNr, ProgrammaID),
@@ -122,3 +143,12 @@ CREATE TABLE `voortgang` (
       ON UPDATE CASCADE
       ON DELETE RESTRICT
 );
+
+INSERT INTO voortgang (Profielnaam, AbonneeNr, ProgrammaID, BekekenPercentage) VALUES
+('StoereJoost2008', 5, 4, 34),
+('Sven902', 4, 3, 20),
+('Sven902', 4, 5, 98),
+('Sven902', 4, 4, 10),
+('Sinterclass', 3, 1, 100),
+('Sinterclass', 3, 9, 98),
+('Sinterclass', 3, 10, 12);
