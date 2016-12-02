@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS `Netflix`;
+
+CREATE DATABASE `Netflix`;
+
+USE `Netflix`;
+
 DROP TABLE IF EXISTS `film`, `aflevering`, `serie`, `voortgang`, `programma`, `profiel`, `abonnement`;
 
 CREATE TABLE `abonnement` (
