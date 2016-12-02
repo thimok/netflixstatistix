@@ -26,7 +26,7 @@ CREATE TABLE `profiel` (
   CONSTRAINT
     FOREIGN KEY (AbonneeNr) REFERENCES `abonnement` (AbonneeNr)
       ON UPDATE CASCADE
-      ON DELETE RESTRICT
+      ON DELETE CASCADE
 );
 
 INSERT INTO profiel (Naam, Geboortedatum, AbonneeNr) VALUES
@@ -133,11 +133,11 @@ CREATE TABLE `voortgang` (
   CONSTRAINT
     FOREIGN KEY (Profielnaam) REFERENCES `profiel` (Naam)
       ON UPDATE CASCADE
-      ON DELETE RESTRICT,
+      ON DELETE CASCADE,
   CONSTRAINT
     FOREIGN KEY (AbonneeNr) REFERENCES `profiel` (AbonneeNr)
       ON UPDATE CASCADE
-      ON DELETE RESTRICT,
+      ON DELETE CASCADE,
   CONSTRAINT
     FOREIGN KEY (ProgrammaID) REFERENCES `programma` (ID)
       ON UPDATE CASCADE
