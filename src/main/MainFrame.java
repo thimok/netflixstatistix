@@ -8,13 +8,14 @@ import javax.swing.plaf.nimbus.State;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+// Hieronder wordt het Jframe gemaakt
 public class MainFrame extends JFrame {
 	
 	public MainFrame() {
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
+
 				JFrame frame = MainFrame.this;
 				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 				frame.setSize(1500, 1000);

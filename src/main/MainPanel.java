@@ -11,7 +11,7 @@ import main.windowsmenu.WindowsMenuPanel;
 
 import javax.swing.*;
 import java.awt.*;
-
+// Hier worden de panels gemaakt
 public class MainPanel extends JPanel {
 	private LeftOverviewPanel leftControl;
 	private FooterPanel footerPanel;
@@ -29,7 +29,7 @@ public class MainPanel extends JPanel {
 		setLayout(new BorderLayout());
 		
 		this.mainFrame = mainFrame;
-		
+		//Nieuwe panels worden hieronder gemaakt
 		leftControl = new LeftOverviewPanel(this);
 		footerPanel = new FooterPanel();
 		windowsMenuPanel = new WindowsMenuPanel(mainFrame);
@@ -39,17 +39,19 @@ public class MainPanel extends JPanel {
 		fourPanel = new OverviewFourPanel();
 		fivePanel = new OverviewFivePanel();
 		sixPanel = new OverviewSixPanel();
-		
+
+		//Hieronder komt wordt een label gemaakt
 		placeholder = new JLabel("Click an item on the left to view the statistix...");
 		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
 		placeholder.setHorizontalAlignment(JLabel.CENTER);
-		
+
+		//Hier wordt de worden de panels toegevoegd aan de mainpanel
 		add(windowsMenuPanel, BorderLayout.NORTH);
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
 		add(placeholder, BorderLayout.CENTER);
 	}
-	
+
 	public void reset() {
 		remove(onePanel);
 		remove(twoPanel);

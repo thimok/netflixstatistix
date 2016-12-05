@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 import main.util.*;
 import main.util.ColorUtil;
-
+// Left overviewPanel is created here
 public class LeftOverviewPanel extends JPanel {
 	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix;
 	private MainPanel mainPanel;

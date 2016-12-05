@@ -4,8 +4,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
+// Here is were the menu button is created
 public class MenuButton extends JButton {
-	
+
 	public MenuButton(String text, Dimension size) {
 		super(text);
 		super.setContentAreaFilled(false);

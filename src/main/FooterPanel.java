@@ -6,7 +6,7 @@ import main.util.ColorUtil;
 
 import javax.swing.*;
 import java.awt.*;
-
+// FooterPanel is created here
 public class FooterPanel extends JPanel {
 	private JLabel footerTitle, footerCourse, footerClass, footerNames;
 	
