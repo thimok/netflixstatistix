@@ -11,10 +11,11 @@ public class FooterPanel extends JPanel {
 	private JLabel footerTitle, footerCourse, footerClass, footerNames;
 	
 	public FooterPanel() {
-		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
-		setBackground(ColorUtil.BACKGROUND_MAIN);
-		
+		setLayout(new BoxLayout(this, BoxLayout.X_AXIS)); // Set Layout
+		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));// set Border
+		setBackground(ColorUtil.BACKGROUND_MAIN);// Set background color
+
+		// Creates new Label
 		footerTitle = new JLabel(StringUtil.COPYRIGHT);
 		footerTitle.setFont(FontUtil.FONT_FOOTER);
 		footerTitle.setForeground(new Color(250,250,250));
