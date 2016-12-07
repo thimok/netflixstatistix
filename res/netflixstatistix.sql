@@ -1,5 +1,5 @@
 -- PanelQuery 1
-SELECT aflevering.Volgnummer, aflevering.SerieTitel, voortgang.BekekenPercentage
+SELECT aflevering.Volgnummer, aflevering.SerieTitel, AVG(voortgang.BekekenPercentage) AS average_bekeken
 FROM voortgang
 INNER JOIN profiel
   ON profiel.Naam = voortgang.Profielnaam AND profiel.AbonneeNr = voortgang.AbonneeNr
@@ -7,7 +7,8 @@ INNER JOIN programma
   ON programma.ID = voortgang.ProgrammaID
 INNER JOIN aflevering
   ON aflevering.ID = programma.ID
-WHERE profiel.Naam = "Sven902"; -- Sven902 vervangen met profielnaam variable
+WHERE aflevering.SerieTitel = "Orange Is The New Black" -- Sven902 vervangen met profielnaam variable
+GROUP BY aflevering.ID;
 
 -- PanelQuery 2
 SELECT programma.Titel, AVG(voortgang.BekekenPercentage)
