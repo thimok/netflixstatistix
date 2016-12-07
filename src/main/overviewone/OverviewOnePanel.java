@@ -24,7 +24,6 @@ public class OverviewOnePanel extends JPanel {
 			while (serie_overview_result.next()) {
 				serie_overview_list.add(serie_overview_result.getString("Titel"));
 			}
-			//String[] Database = {"Abonnoment", "Profiel", "Voortgang", "Programma", "Aflevering", "Serie", "Film"};
 			combox = new JComboBox(serie_overview_list.toArray());
 			ComboListener cl = new ComboListener();
 			combox.addItemListener(cl);
