@@ -9,5 +9,5 @@ public class FontUtil {
 	public static final Font FONT_TITLE = new Font("Verdana", Font.PLAIN + Font.BOLD, 30);
 	public static final Font FONT_SUBTITLE = new Font("Verdana", Font.PLAIN + Font.BOLD, 18);
 	public static final Font FONT_VERSION = new Font("Verdana", Font.PLAIN + Font.BOLD, 11);
-	public static final Font FONT_HEADER = new Font("Verdana", Font.BOLD, 14);
+	public static final Font FONT_HEADER = new Font("Verdana", Font.BOLD, 17);
 }

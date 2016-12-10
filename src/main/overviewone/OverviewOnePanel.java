@@ -55,8 +55,6 @@ public class OverviewOnePanel extends OverviewPanel {
 			}
 			ta.setText("<div style = 'text-align: center; color: #FAFAFA;'><font face='verdana' size='4'>" + sb.toString() + "</font></div>");
 			
-			System.out.println(ta.getText());
-			
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}

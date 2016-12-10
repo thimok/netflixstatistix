@@ -42,6 +42,8 @@ public class Connectable {
 	public static ArrayList fillComboBox(String query, boolean s, String item) {
 		ArrayList<String> rs_list = new ArrayList<>();
 		
+		rs_list.add("");
+		
 		try {
 			ResultSet rs = Connectable.executeQuery(query);
 			if (s) {

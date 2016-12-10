@@ -28,8 +28,6 @@ public class QueryResult implements ItemListener{
 			Object item = e.getItem();
 			this.item = item;
 			ArrayList<OneViewItem> results = new ArrayList<>();
-			
-			ta.setText("");
 			p.displayResultsOne(results, ta, item, l);
 		}
 	}
