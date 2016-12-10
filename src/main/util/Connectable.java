@@ -1,6 +1,7 @@
 package main.util;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Connectable {
 	
@@ -36,5 +37,26 @@ public class Connectable {
 			e.printStackTrace();
 		}
 		return rs;
+	}
+	
+	public static ArrayList fillComboBox(String query, boolean s, String item) {
+		ArrayList<String> rs_list = new ArrayList<>();
+		
+		try {
+			ResultSet rs = Connectable.executeQuery(query);
+			if (s) {
+				while (rs.next()) {
+					rs_list.add(rs.getString(item));
+				}
+			} else {
+				while (rs.next()) {
+					rs_list.add("" + rs.getInt(item));
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return rs_list;
 	}
 }

@@ -3,6 +3,7 @@ package main;
 import main.util.FontUtil;
 
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
 import java.awt.*;
 import java.awt.event.*;
 import main.util.*;
@@ -18,7 +19,9 @@ public class LeftOverviewPanel extends JPanel {
 		this.mainPanel = mp;
 		
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBorder(BorderFactory.createEmptyBorder(5, 5, 15, 20));
+		setBorder(new CompoundBorder(
+				BorderFactory.createMatteBorder(0, 0, 0, 1, ColorUtil.BACKGROUND_MAIN),
+				BorderFactory.createEmptyBorder(5, 5, 15, 19)));
 		setBackground(ColorUtil.BACKGROUND);
 		
 		KnopHandler kh = new KnopHandler();
@@ -26,7 +29,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewOne = new MenuButton(StringUtil.OVERVIEW_ONE, sizeSingle);
 		buttonOverviewOne.setFont(FontUtil.FONT_MENU);
 		buttonOverviewOne.addActionListener(kh);
-		//buttonOverviewOne.setToolTipText(StringUtil.OVERVIEW_ONE);
 		add(buttonOverviewOne);
 		
 		add(Box.createVerticalStrut(10));
@@ -34,7 +36,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewTwo = new MenuButton(StringUtil.OVERVIEW_TWO, sizeDouble);
 		buttonOverviewTwo.setFont(FontUtil.FONT_MENU);
 		buttonOverviewTwo.addActionListener(kh);
-		//buttonOverviewTwo.setToolTipText(StringUtil.OVERVIEW_TWO);
 		add(buttonOverviewTwo);
 		
 		add(Box.createVerticalStrut(10));
@@ -42,7 +43,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewThree = new MenuButton(StringUtil.OVERVIEW_THREE, sizeDouble);
 		buttonOverviewThree.setFont(FontUtil.FONT_MENU);
 		buttonOverviewThree.addActionListener(kh);
-		//buttonOverviewThree.setToolTipText(StringUtil.OVERVIEW_THREE);
 		add(buttonOverviewThree);
 		
 		add(Box.createVerticalStrut(10));
@@ -50,7 +50,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewFour = new MenuButton(StringUtil.OVERVIEW_FOUR, sizeDouble);
 		buttonOverviewFour.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFour.addActionListener(kh);
-		//buttonOverviewFour.setToolTipText(StringUtil.OVERVIEW_FOUR);
 		add(buttonOverviewFour);
 		
 		add(Box.createVerticalStrut(10));
@@ -58,7 +57,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewFive = new MenuButton(StringUtil.OVERVIEW_FIVE, sizeDouble);
 		buttonOverviewFive.setFont(FontUtil.FONT_MENU);
 		buttonOverviewFive.addActionListener(kh);
-		//buttonOverviewFive.setToolTipText(StringUtil.OVERVIEW_FIVE);
 		add(buttonOverviewFive);
 		
 		add(Box.createVerticalStrut(10));
@@ -66,7 +64,6 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewSix = new MenuButton(StringUtil.OVERVIEW_SIX, sizeDouble);
 		buttonOverviewSix.setFont(FontUtil.FONT_MENU);
 		buttonOverviewSix.addActionListener(kh);
-		//buttonOverviewSix.setToolTipText(StringUtil.OVERVIEW_SIX);
 		add(buttonOverviewSix);
 	}
 	
