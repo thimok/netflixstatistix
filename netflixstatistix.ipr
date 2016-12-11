@@ -80,7 +80,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/netflixstatistix.iml" filepath="$PROJECT_DIR$/netflixstatistix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NetflixStatistix.iml" filepath="$PROJECT_DIR$/NetflixStatistix.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
