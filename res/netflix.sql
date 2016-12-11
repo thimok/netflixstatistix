@@ -1,6 +1,53 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2016 at 02:21 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Database: `netflix`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `abonnement`
+--
+
+CREATE TABLE `abonnement` (
+  `AbonneeNr` int(10) NOT NULL,
+  `Naam` varchar(20) DEFAULT NULL,
+  `Adres` varchar(20) DEFAULT NULL,
+  `Woonplaats` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `abonnement`
+--
+
+INSERT INTO `abonnement` (`AbonneeNr`, `Naam`, `Adres`, `Woonplaats`) VALUES
+(1, 'Destiny LongHart', 'Middensaw 104', 'Rotterdam'),
+(2, 'Devon Marsham', 'Hindersteinstraat 1', 'Rotterdam'),
+(3, 'Jon Snow', 'Westeros 12', 'Amsterdam'),
+(4, 'Sven blondhaar', 'Pelletroad 2112', 'Kanto Region'),
+(5, 'Joost Kalen', 'Kerkstraat 18', 'Enschede'),
+(6, 'Henk Pietersen', 'Dijkje 1', 'Groningen'),
+(7, 'Desty van Halderen', 'SonStraat 1', 'Amsterdam'),
+(8, 'Ruwendy Martina', 'Graafvoorde 17', 'Spijkenisse'),
+(9, 'Twan van Maastricht', 'Korriban kade 1', 'Amsterdam'),
+(10, 'Luka Brinkman', 'Studentlaan 21', 'Tilburg');
 
 -- --------------------------------------------------------
 
@@ -208,6 +255,12 @@ INSERT INTO `voortgang` (`Profielnaam`, `AbonneeNr`, `ProgrammaID`, `BekekenPerc
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `abonnement`
+--
+ALTER TABLE `abonnement`
+  ADD PRIMARY KEY (`AbonneeNr`);
 
 --
 -- Indexes for table `aflevering`
