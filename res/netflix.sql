@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2016 at 02:21 PM
+-- Generation Time: Dec 12, 2016 at 10:10 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -107,7 +107,12 @@ INSERT INTO `film` (`ID`, `Genre`, `Taal`, `Leeftijdsindicatie`) VALUES
 (5, 'Komedie', 'Engels', 12),
 (6, 'Misdaad, Drama', 'Engels', 16),
 (7, 'Thriller, Sciencefiction', 'Engels', 12),
-(8, 'Animatie, Avontuur', 'Nederlands', 6);
+(8, 'Animatie, Avontuur', 'Nederlands', 6),
+(24, 'Action, Adventure, Sci-fi', 'Engels', 13),
+(25, 'Comedy, Family, fantasy', 'Engels', 6),
+(26, ' Animation, Adventure, Comedy', 'Engels', 6),
+(27, ' Animation, Adventure, Comedy', 'Engels', 6),
+(28, 'Animation, Adventure, Family ', 'Engels', 6);
 
 -- --------------------------------------------------------
 
@@ -183,7 +188,12 @@ INSERT INTO `programma` (`ID`, `Titel`, `Tijdsduur`) VALUES
 (20, 'Supergirl S01E01', '00:43:00'),
 (21, 'Supergirl S01E02', '00:43:00'),
 (22, 'Supernatural S01E01', '00:44:00'),
-(23, 'Supernatural S01E01', '00:44:00');
+(23, 'Supernatural S01E01', '00:44:00'),
+(24, 'Star Wars: Episode VII The Force Awakens', '02:16:00'),
+(25, 'How the Grinch Stole Christmas', '01:44:00'),
+(26, 'Tangled', '01:40:00'),
+(27, 'Despicable Me', '01:35:00'),
+(28, 'Spirited Away', '02:15:00');
 
 -- --------------------------------------------------------
 
