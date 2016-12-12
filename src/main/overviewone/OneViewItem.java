@@ -1,11 +1,5 @@
 package main.overviewone;
 
-import main.util.ResultPanel;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 public class OneViewItem {
 	private String serieNaam;
 	private int volgnummer;

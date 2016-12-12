@@ -1,5 +1,9 @@
-package main.util;
+package main.overviewone;
 
+import main.overviewone.OneTransactionResult;
+import main.overviewone.OneTransactionScript;
+import main.overviewone.OneViewItem;
+import main.util.*;
 import main.util.jiconfont.icons.FontAwesome;
 import main.util.jiconfont.swing.IconFontSwing;
 
@@ -7,19 +11,25 @@ import javax.swing.*;
 import javax.swing.plaf.ComboBoxUI;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicComboBoxUI;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
-public class OptionMenu extends JPanel{
-	private QueryResult cl;
+public class OptionMenuOne extends JPanel{
 	static private Icon arrow = IconFontSwing.buildIcon(FontAwesome.CARET_DOWN, 10, ColorUtil.MAIN_TEXT);
+	private JEditorPane ta;
+	private JLabel l;
 	
-	public OptionMenu(ArrayList<String> list, String labelt, JEditorPane ta, OverviewPanel p, JLabel l) {
+	public OptionMenuOne(String labelt, JEditorPane ta, JLabel l) {
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		this.ta = ta;
+		this.l = l;
+		
 		JLabel label = new JLabel(labelt);
+		ArrayList list = OneTransactionScript.fillComboBox();
 		JComboBox cb = new JComboBox(list.toArray());
-		this.cl = new QueryResult(ta, cb, p, l);
-		cb.addItemListener(cl);
+		cb.addItemListener(new QueryResult());
 		cb.setUI((ComboBoxUI) CustomComboBoxUI.createUI(cb));
 		cb.setBackground(ColorUtil.BACKGROUND);
 		cb.setForeground(ColorUtil.MAIN_TEXT);
@@ -47,5 +57,18 @@ public class OptionMenu extends JPanel{
 			return button;
 		}
 	}
+	
+	public class QueryResult implements ItemListener {
+		@Override
+		public void itemStateChanged(ItemEvent e) {
+			if (e.getStateChange() == ItemEvent.SELECTED) {
+				Object item = e.getItem();
+				ArrayList<OneViewItem> results = new ArrayList<>();
+				OneTransactionResult.displayResultsOne(results, ta, item, l);
+			}
+		}
+	}
+	
+	
 	
 }
