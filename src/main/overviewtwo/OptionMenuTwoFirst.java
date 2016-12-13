@@ -43,6 +43,9 @@ public class OptionMenuTwoFirst extends JPanel{
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
+		
+		this.l = new JLabel(""); //l init
+		this.ta = new JEditorPane(); //ta init
 	}
 	
 	public void setOtherComboBox(JComboBox cbO) {
@@ -71,9 +74,13 @@ public class OptionMenuTwoFirst extends JPanel{
 			if (e.getStateChange() == ItemEvent.SELECTED) {
 				Object item1 = e.getItem();
 				Object item2 = cbOther.getSelectedItem();
+				System.out.println(cbOther.getSelectedItem().toString());
 				ArrayList<TwoViewItem> results = new ArrayList<>();
-				if(item2 != null) {
-					TwoTransactionResult.displayResultsTwo(results, ta, item2, item1, l);
+				if(item2 != "") { //!= null is hier fout. Er is altijd iets geselecteerd, maar de waarde is empty ("" dus).
+					System.out.println("Item2 not null");
+					System.out.println("TA inhoud: " + ta.getText()); //Error
+					System.out.println("l inhoud: " + l.getText()); //Error
+					TwoTransactionResult.displayResultsTwo(results, ta, item2, item1, l); //ta en l zijn nooit geïnitaliseerd. Daardoor NPE.
 				}
 			}
 		}
