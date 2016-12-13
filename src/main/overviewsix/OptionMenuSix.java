@@ -1,9 +1,11 @@
-package main.overviewtwo;
+package main.overviewsix;
 
-import main.overviewone.OneTransactionResult;
-import main.overviewone.OneTransactionScript;
-import main.overviewone.OneViewItem;
-import main.util.*;
+import main.overviewthree.ThreeTransactionResult;
+import main.overviewthree.ThreeTransactionScript;
+import main.util.ColorUtil;
+import main.util.OptionMenuButton;
+import main.util.cbEditor;
+import main.util.cbRenderer;
 import main.util.jiconfont.icons.FontAwesome;
 import main.util.jiconfont.swing.IconFontSwing;
 
@@ -15,23 +17,22 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
-public class OptionMenuTwoFirst extends JPanel{
+public class OptionMenuSix extends JPanel{
 	static private Icon arrow = IconFontSwing.buildIcon(FontAwesome.CARET_DOWN, 10, ColorUtil.MAIN_TEXT);
 	private JEditorPane ta;
 	private JLabel l;
-	private JComboBox cbOther, cb;
 	
-	public OptionMenuTwoFirst(String labelt, JEditorPane ta, JLabel l) {
+	public OptionMenuSix(String labelt, JEditorPane ta, JLabel l) {
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		this.l = l;
 		this.ta = ta;
+		this.l = l;
 		
 		JLabel label = new JLabel(labelt);
-		ArrayList list = TwoTransactionScript.fillComboBoxOne();
-		this.cb = new JComboBox(list.toArray());
-		cb.addItemListener(new QueryResult());
-		cb.setUI((ComboBoxUI) CustomComboBoxUI.createUI(cb));
+		ArrayList list = SixTransactionScript.fillComboBox();
+		JComboBox cb = new JComboBox(list.toArray());
+		cb.addItemListener(new OptionMenuSix.QueryResult());
+		cb.setUI((ComboBoxUI) OptionMenuSix.CustomComboBoxUI.createUI(cb));
 		cb.setBackground(ColorUtil.BACKGROUND);
 		cb.setForeground(ColorUtil.MAIN_TEXT);
 		cb.setRenderer(new cbRenderer());
@@ -41,25 +42,15 @@ public class OptionMenuTwoFirst extends JPanel{
 		
 		this.setBackground(ColorUtil.BACKGROUND);
 		label.setForeground(ColorUtil.MAIN_TEXT);
-
+		
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
-		
-		
-	}
-	
-	public void setOtherComboBox(JComboBox cbO) {
-		this.cbOther = cbO;
-	}
-	
-	public JComboBox getOtherComboBox() {
-		return cb;
 	}
 	
 	static class CustomComboBoxUI extends BasicComboBoxUI {
 		public static ComponentUI createUI(JComponent c) {
-			return new CustomComboBoxUI();
+			return new OptionMenuSix.CustomComboBoxUI();
 		}
 		
 		@Override
@@ -74,16 +65,8 @@ public class OptionMenuTwoFirst extends JPanel{
 		public void itemStateChanged(ItemEvent e) {
 			if (e.getStateChange() == ItemEvent.SELECTED) {
 				Object item1 = e.getItem();
-				Object item2 = cbOther.getSelectedItem();
-				System.out.println(cbOther.getSelectedItem().toString());
-				ArrayList<TwoViewItem> results = new ArrayList<>();
-				if(item2 != "") {
-					TwoTransactionResult.displayResultsTwo(results, ta, item2, item1, l);
-				}
+				SixTransactionResult.displayResultsSix(ta, item1, l);
 			}
 		}
 	}
-	
-	
-	
 }
