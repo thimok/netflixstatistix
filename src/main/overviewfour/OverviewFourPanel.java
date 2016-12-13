@@ -32,7 +32,7 @@ public class OverviewFourPanel extends JPanel {
 		sp = new JScrollPane(ta, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		sp.setBorder(null);
 		
-		l = new JLabel("Films voor onder de 16");
+		l = new JLabel("Longest movies for children under the age of 16");
 		l.setFont(FontUtil.FONT_HEADER);
 		l.setForeground(ColorUtil.MAIN_TEXT);
 		l.setHorizontalAlignment(SwingConstants.CENTER);

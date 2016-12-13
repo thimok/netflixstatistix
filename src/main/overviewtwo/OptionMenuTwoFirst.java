@@ -1,12 +1,9 @@
-package main.overviewone;
+package main.overviewtwo;
 
-import main.overviewtwo.OptionMenuTwoFirst;
-import main.overviewtwo.TwoTransactionResult;
-import main.overviewtwo.TwoViewItem;
-import main.util.ColorUtil;
-import main.util.OptionMenuButton;
-import main.util.cbEditor;
-import main.util.cbRenderer;
+import main.overviewone.OneTransactionResult;
+import main.overviewone.OneTransactionScript;
+import main.overviewone.OneViewItem;
+import main.util.*;
 import main.util.jiconfont.icons.FontAwesome;
 import main.util.jiconfont.swing.IconFontSwing;
 
@@ -18,20 +15,19 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
-public class OptionMenuOne extends JPanel{
+public class OptionMenuTwoFirst extends JPanel{
 	static private Icon arrow = IconFontSwing.buildIcon(FontAwesome.CARET_DOWN, 10, ColorUtil.MAIN_TEXT);
 	private JEditorPane ta;
 	private JLabel l;
+	private Object item2, item1;
+	private JComboBox cbOther, cb;
 	
-	public OptionMenuOne(String labelt, JEditorPane ta, JLabel l) {
+	public OptionMenuTwoFirst(String labelt, JEditorPane ta, JLabel l) {
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
-		this.ta = ta;
-		this.l = l;
-		
 		JLabel label = new JLabel(labelt);
-		ArrayList list = OneTransactionScript.fillComboBox();
-		JComboBox cb = new JComboBox(list.toArray());
+		ArrayList list = TwoTransactionScript.fillComboBoxOne();
+		this.cb = new JComboBox(list.toArray());
 		cb.addItemListener(new QueryResult());
 		cb.setUI((ComboBoxUI) CustomComboBoxUI.createUI(cb));
 		cb.setBackground(ColorUtil.BACKGROUND);
@@ -47,6 +43,14 @@ public class OptionMenuOne extends JPanel{
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
+	}
+	
+	public void setOtherComboBox(JComboBox cbO) {
+		this.cbOther = cbO;
+	}
+	
+	public JComboBox getOtherComboBox() {
+		return cb;
 	}
 	
 	static class CustomComboBoxUI extends BasicComboBoxUI {
@@ -66,8 +70,11 @@ public class OptionMenuOne extends JPanel{
 		public void itemStateChanged(ItemEvent e) {
 			if (e.getStateChange() == ItemEvent.SELECTED) {
 				Object item1 = e.getItem();
-				ArrayList<OneViewItem> results = new ArrayList<>();
-				OneTransactionResult.displayResultsOne(results, ta, item1, l);
+				Object item2 = cbOther.getSelectedItem();
+				ArrayList<TwoViewItem> results = new ArrayList<>();
+				if(item2 != null) {
+					TwoTransactionResult.displayResultsTwo(results, ta, item2, item1, l);
+				}
 			}
 		}
 	}

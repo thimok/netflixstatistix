@@ -18,13 +18,24 @@ public class FourTransactionResult {
 		
 		ResultSet rs = Connectable.executeQuery(query);
 		StringBuffer sb = new StringBuffer();
+		ArrayList results = new ArrayList<>();
 		
 		if (rs != null) {
 			try {
 				while (rs.next()) {
-					String titel = "<strong>" + rs.getString("programma.Titel") + "</strong>";
-					sb.append(titel + "<br><br>");
+					results.add(rs.getString("programma.Titel"));
 				}
+				
+				for(int i=0; i < results.size(); i++) {
+					if(i==0) {
+						String titel = "<font size='5' color='#D32F2F'><strong>" + (i + 1) + ". " + results.get(i).toString() + "</strong></font>";
+						sb.append(titel + "<br>");
+					} else {
+						String titel = "<strong>" + (i + 1) + ". " + results.get(i).toString() + "</strong>";
+						sb.append(titel + "<br>");
+					}
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -1,10 +1,10 @@
-package main.overviewone;
+package main.overviewtwo;
 
-public class OneViewItem {
+public class TwoViewItem {
 	private int volgnummer;
 	private double gemiddeldbekeken;
 	
-	public OneViewItem(int volgnummer, double gemiddeldbekeken) {
+	public TwoViewItem(int volgnummer, double gemiddeldbekeken) {
 		this.volgnummer = volgnummer;
 		this.gemiddeldbekeken = gemiddeldbekeken;
 	}
@@ -16,5 +16,4 @@ public class OneViewItem {
 	public double getGemiddeldbekeken() {
 		return this.gemiddeldbekeken;
 	}
-		
 }
