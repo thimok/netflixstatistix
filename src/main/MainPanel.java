@@ -6,6 +6,7 @@ import main.overviewone.OverviewOnePanel;
 import main.overviewsix.OverviewSixPanel;
 import main.overviewthree.OverviewThreePanel;
 import main.overviewtwo.OverviewTwoPanel;
+import main.util.ColorUtil;
 import main.util.FontUtil;
 import main.windowsmenu.WindowsMenuPanel;
 
@@ -27,6 +28,7 @@ public class MainPanel extends JPanel {
 
 	public MainPanel(JFrame mainFrame) {
 		setLayout(new BorderLayout());
+		setBackground(ColorUtil.BACKGROUND);
 		
 		this.mainFrame = mainFrame;
 		//Nieuwe panels worden hieronder gemaakt
@@ -43,6 +45,7 @@ public class MainPanel extends JPanel {
 		//Hieronder komt wordt een label gemaakt
 		placeholder = new JLabel("Click an item on the left to view the statistix...");
 		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
+		placeholder.setForeground(ColorUtil.MAIN_TEXT);
 		placeholder.setHorizontalAlignment(JLabel.CENTER);
 
 		//Hier wordt de worden de panels toegevoegd aan de mainpanel

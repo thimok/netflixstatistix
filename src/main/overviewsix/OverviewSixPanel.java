@@ -43,7 +43,7 @@ public class OverviewSixPanel extends JPanel {
 		l.setPreferredSize(ld);
 		l.setMinimumSize(ld);
 		
-		option = new OptionMenuSix("Account: ", ta, l);
+		option = new OptionMenuSix("Movie: ", ta, l);
 		option.setMinimumSize(new Dimension(600,200));
 		option.setMaximumSize(new Dimension(600,200));
 		
