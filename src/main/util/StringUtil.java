@@ -17,4 +17,5 @@ public class StringUtil {
 	public static final String OVERVIEW_SIX = "<html>Movie popularity<br>check</html>";
 	public static final String OVERVIEW_ACCOUNT = "<html>Account settings</html>";
 	public static final String OVERVIEW_PROFILE = "<html>Profile settings</html>";
+	public static final String OVERVIEW_PROGRESS = "<html>Progress settings</html>";
 }

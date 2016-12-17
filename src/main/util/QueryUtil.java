@@ -85,6 +85,45 @@ public class QueryUtil {
 		}
 	}
 	
+	public static void addProgress(String profile, int account, int program, int percentage) {
+		String query = "INSERT INTO voortgang (Profielnaam, AbonneeNr, ProgrammaID, BekekenPercentage) VALUES ('" + profile + "', " + account + ", " + program + ", " + percentage + ");";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void changeProgress(String profile, int account, int program, int percentage) {
+		String query = "UPDATE voortgang SET BekekenPercentage = " + percentage + " WHERE Profielnaam = '" + profile + "' AND AbonneeNr = " + account + " AND ProgrammaID = " + program + ";";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void deleteProgress(String profile, int account, int program) {
+		String query = "DELETE FROM voortgang WHERE Profielnaam = '" + profile + "' AND AbonneeNr = " + account + " AND ProgrammaID = " + program + ";";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static int getMaximumNumberFromColumn(String table, String column) {
 		int ret = -1; //Always check if returned value equals -1, this is an error!
 		

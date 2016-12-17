@@ -10,7 +10,7 @@ import main.util.*;
 import main.util.ColorUtil;
 // Left overviewPanel is created here
 public class LeftOverviewPanel extends JPanel {
-	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix, buttonAccount, buttonProfile;
+	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix, buttonAccount, buttonProfile, buttonProgress;
 	private MainPanel mainPanel;
 	private Dimension sizeSingle = new Dimension(150,30);
 	private Dimension sizeDouble = new Dimension(150,50);
@@ -75,6 +75,11 @@ public class LeftOverviewPanel extends JPanel {
 		buttonProfile.setFont(FontUtil.FONT_MENU);
 		buttonProfile.addActionListener(kh);
 		add(buttonProfile);
+		
+		buttonProgress = new MenuButton(StringUtil.OVERVIEW_PROGRESS, sizeDouble);
+		buttonProgress.setFont(FontUtil.FONT_MENU);
+		buttonProgress.addActionListener(kh);
+		add(buttonProgress);
 	}
 	
 	class KnopHandler implements ActionListener {
@@ -96,6 +101,8 @@ public class LeftOverviewPanel extends JPanel {
 				mainPanel.showAccount();
 			} else if (e.getSource() == buttonProfile) {
 				mainPanel.showProfile();
+			} else if (e.getSource() == buttonProgress) {
+				mainPanel.showProgress();
 			}
 		}
 	}
