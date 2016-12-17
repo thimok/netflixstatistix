@@ -46,6 +46,45 @@ public class QueryUtil {
 		}
 	}
 	
+	public static void addProfile(String name, String date, int account) {
+		String query = "INSERT INTO profiel (Naam, Geboortedatum, AbonneeNr) VALUES ('" + name + "', '" + date + "', " + account + ");";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void changeProfile(String name, String date, int account) {
+		String query = "UPDATE profiel SET Geboortedatum = '" + date + "' WHERE Naam = '" + name + "' AND AbonneeNr = " + account + "";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void deleteProfile(String name, int account) {
+		String query = "DELETE FROM profiel WHERE Naam = '" + name + "' AND AbonneeNr = " + account + ";";
+		
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost/netflix", "root", "");
+			Statement s = c.createStatement();
+			
+			s.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static int getMaximumNumberFromColumn(String table, String column) {
 		int ret = -1; //Always check if returned value equals -1, this is an error!
 		

@@ -15,5 +15,6 @@ public class StringUtil {
 	public static final String OVERVIEW_FOUR = "<html>Longest movies<br>for under 16s</html>";
 	public static final String OVERVIEW_FIVE = "<html>Lonely accounts<br><small><i>(equals profit)</i></small></html>";
 	public static final String OVERVIEW_SIX = "<html>Movie popularity<br>check</html>";
-	public static final String ADD_ACCOUNT = "<html>Account settings</html>";
+	public static final String OVERVIEW_ACCOUNT = "<html>Account settings</html>";
+	public static final String OVERVIEW_PROFILE = "<html>Profile settings</html>";
 }
