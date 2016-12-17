@@ -66,20 +66,28 @@ public class LeftOverviewPanel extends JPanel {
 		buttonOverviewSix.addActionListener(kh);
 		add(buttonOverviewSix);
 		
-		buttonAccount = new MenuButton(StringUtil.OVERVIEW_ACCOUNT, sizeDouble);
+		add(Box.createVerticalGlue());
+		
+		buttonAccount = new MenuButton(StringUtil.OVERVIEW_ACCOUNT, sizeSingle);
 		buttonAccount.setFont(FontUtil.FONT_MENU);
 		buttonAccount.addActionListener(kh);
 		add(buttonAccount);
 		
-		buttonProfile = new MenuButton(StringUtil.OVERVIEW_PROFILE, sizeDouble);
+		add(Box.createVerticalStrut(10));
+		
+		buttonProfile = new MenuButton(StringUtil.OVERVIEW_PROFILE, sizeSingle);
 		buttonProfile.setFont(FontUtil.FONT_MENU);
 		buttonProfile.addActionListener(kh);
 		add(buttonProfile);
 		
-		buttonProgress = new MenuButton(StringUtil.OVERVIEW_PROGRESS, sizeDouble);
+		add(Box.createVerticalStrut(10));
+		
+		buttonProgress = new MenuButton(StringUtil.OVERVIEW_PROGRESS, sizeSingle);
 		buttonProgress.setFont(FontUtil.FONT_MENU);
 		buttonProgress.addActionListener(kh);
 		add(buttonProgress);
+		
+		add(Box.createVerticalStrut(10));
 	}
 	
 	class KnopHandler implements ActionListener {

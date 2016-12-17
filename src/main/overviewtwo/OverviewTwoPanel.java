@@ -53,7 +53,7 @@ public class OverviewTwoPanel extends JPanel {
 		option1.setMaximumSize(ld);
 		
 		//Create an optionmenu (JPanel with JCombobox and JLabel) and set the size
-		option2 = new OptionMenuTwoSecond("Titel: ", ta, l);
+		option2 = new OptionMenuTwoSecond("Title: ", ta, l);
 		option2.setMinimumSize(ld);
 		option2.setMaximumSize(ld);
 		

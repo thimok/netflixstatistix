@@ -43,7 +43,7 @@ public class OverviewOnePanel extends JPanel{
 		l.setPreferredSize(ld);
 		l.setMinimumSize(ld);
 		
-		option = new OptionMenuOne("Titel: ", ta, l);
+		option = new OptionMenuOne("Title: ", ta, l);
 		option.setMinimumSize(new Dimension(600,200));
 		option.setMaximumSize(new Dimension(600,200));
 		
