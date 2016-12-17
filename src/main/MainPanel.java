@@ -1,5 +1,6 @@
 package main;
 
+import main.overviewaccount.AccountPanel;
 import main.overviewfive.OverviewFivePanel;
 import main.overviewfour.OverviewFourPanel;
 import main.overviewone.OverviewOnePanel;
@@ -23,6 +24,7 @@ public class MainPanel extends JPanel {
 	private OverviewFourPanel fourPanel;
 	private OverviewFivePanel fivePanel;
 	private OverviewSixPanel sixPanel;
+	private AccountPanel accountPanel;
 	private JLabel placeholder;
 	private JFrame mainFrame;
 
@@ -41,6 +43,7 @@ public class MainPanel extends JPanel {
 		fourPanel = new OverviewFourPanel();
 		fivePanel = new OverviewFivePanel();
 		sixPanel = new OverviewSixPanel();
+		accountPanel = new AccountPanel();
 
 		//Hieronder komt wordt een label gemaakt
 		placeholder = new JLabel("Click an item on the left to view the statistix...");
@@ -62,7 +65,10 @@ public class MainPanel extends JPanel {
 		remove(fourPanel);
 		remove(fivePanel);
 		remove(sixPanel);
+		remove(accountPanel);
 		remove(placeholder);
+		
+		accountPanel.setState(0);
 		
 		revalidate();
 		repaint();
@@ -111,6 +117,14 @@ public class MainPanel extends JPanel {
 	public void showSix() {
 		reset();
 		add(sixPanel, BorderLayout.CENTER);
+		
+		revalidate();
+		repaint();
+	}
+	
+	public void showAccount() {
+		reset();
+		add(accountPanel, BorderLayout.CENTER);
 		
 		revalidate();
 		repaint();
