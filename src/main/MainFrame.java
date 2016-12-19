@@ -8,9 +8,12 @@ import javax.swing.plaf.nimbus.State;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-// Hieronder wordt het Jframe gemaakt
+
 public class MainFrame extends JFrame {
 	
+	/**
+	 * Constructor for a new Frame class
+	 */
 	public MainFrame() {
 		Runnable runnable = new Runnable() {
 			@Override
@@ -37,22 +40,37 @@ public class MainFrame extends JFrame {
 	class FrameDragListener extends MouseAdapter {
 		private Point mouseDownCompCoords = null;
 		
+		/**
+		 * Empty constructor
+		 */
 		public FrameDragListener() {
 			
 		}
 		
+		/**
+		 * Event triggered when mouse button is released
+		 * @param e MouseEvent type
+		 */
 		public void mouseReleased(MouseEvent e) {
 			if (StateUtil.CANMOVE) {
 				mouseDownCompCoords = null;
 			}
 		}
 		
+		/**
+		 * Event triggered when mouse button is pressed
+		 * @param e MouseEvent type
+		 */
 		public void mousePressed(MouseEvent e) {
 			if (StateUtil.CANMOVE) {
 				mouseDownCompCoords = e.getPoint();
 			}
 		}
 		
+		/**
+		 * Event triggered when mouse is dragged
+		 * @param e MouseEvent type
+		 */
 		public void mouseDragged(MouseEvent e) {
 			if (StateUtil.CANMOVE) {
 				Point currCoords = e.getLocationOnScreen();

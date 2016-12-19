@@ -8,13 +8,17 @@ import java.awt.*;
 import java.awt.event.*;
 import main.util.*;
 import main.util.ColorUtil;
-// Left overviewPanel is created here
+
 public class LeftOverviewPanel extends JPanel {
 	private MenuButton buttonOverviewOne, buttonOverviewTwo, buttonOverviewThree, buttonOverviewFour, buttonOverviewFive, buttonOverviewSix, buttonAccount, buttonProfile, buttonProgress;
 	private MainPanel mainPanel;
 	private Dimension sizeSingle = new Dimension(150,30);
 	private Dimension sizeDouble = new Dimension(150,50);
 	
+	/**
+	 * Constructor for the left menu
+	 * @param mp Mainpanel instance
+	 */
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
@@ -91,6 +95,10 @@ public class LeftOverviewPanel extends JPanel {
 	}
 	
 	class KnopHandler implements ActionListener {
+		/**
+		 * Clicked JButton event
+		 * @param e ActionEvent type
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == buttonOverviewOne) {
