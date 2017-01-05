@@ -2,11 +2,7 @@ package main;
 
 public class Main {
 	
-	/**
-	 * Main method, run when program starts.
-	 * @param args Command line arguments. Empty because we don't use a command line.
-	 */
-	public static void main(String[] args) {
-		new MainFrame();
+	public static void main(String[] args) { //hier wordt het programma gestart
+		new MainFrame();// Wanneer het programma start wordt er een Jframe geinstantieerd. Ga Naar MainFrame class
 	}
 }

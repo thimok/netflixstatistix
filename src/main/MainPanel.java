@@ -31,17 +31,13 @@ public class MainPanel extends JPanel {
 	private ProgressPanel progressPanel;
 	private JLabel placeholder;
 	private JFrame mainFrame;
-	
-	/**
-	 * Constructor for the panel in the main frame
-	 * @param mainFrame Frame instance
-	 */
+
 	public MainPanel(JFrame mainFrame) {
 		setLayout(new BorderLayout());
 		setBackground(ColorUtil.BACKGROUND);
 		
 		this.mainFrame = mainFrame;
-		
+		//Nieuwe panels worden hieronder gemaakt
 		leftControl = new LeftOverviewPanel(this);
 		footerPanel = new FooterPanel();
 		windowsMenuPanel = new WindowsMenuPanel(mainFrame);
@@ -54,21 +50,20 @@ public class MainPanel extends JPanel {
 		accountPanel = new AccountPanel();
 		profilePanel = new ProfilePanel();
 		progressPanel = new ProgressPanel();
-		
+
+		//Hieronder komt wordt een label gemaakt
 		placeholder = new JLabel("Click an item on the left to view the statistix...");
 		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
 		placeholder.setForeground(ColorUtil.MAIN_TEXT);
 		placeholder.setHorizontalAlignment(JLabel.CENTER);
-		
+
+		//Hier wordt de worden de panels toegevoegd aan de mainpanel
 		add(windowsMenuPanel, BorderLayout.NORTH);
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
 		add(placeholder, BorderLayout.CENTER);
 	}
-	
-	/**
-	 * Reset the panel (remove everything)
-	 */
+
 	public void reset() {
 		remove(onePanel);
 		remove(twoPanel);
@@ -89,9 +84,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 1
-	 */
 	public void showOne() {
 		reset();
 		add(onePanel, BorderLayout.CENTER);
@@ -100,9 +92,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 2
-	 */
 	public void showTwo() {
 		reset();
 		add(twoPanel, BorderLayout.CENTER);
@@ -111,9 +100,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 3
-	 */
 	public void showThree() {
 		reset();
 		add(threePanel, BorderLayout.CENTER);
@@ -122,9 +108,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 4
-	 */
 	public void showFour() {
 		reset();
 		add(fourPanel, BorderLayout.CENTER);
@@ -133,9 +116,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 5
-	 */
 	public void showFive() {
 		reset();
 		add(fivePanel, BorderLayout.CENTER);
@@ -144,9 +124,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show panel 6
-	 */
 	public void showSix() {
 		reset();
 		add(sixPanel, BorderLayout.CENTER);
@@ -155,9 +132,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show account CRUD
-	 */
 	public void showAccount() {
 		reset();
 		add(accountPanel, BorderLayout.CENTER);
@@ -166,9 +140,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show profile CRUD
-	 */
 	public void showProfile() {
 		reset();
 		add(profilePanel, BorderLayout.CENTER);
@@ -177,9 +148,6 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
-	/**
-	 * Show progress CRUD
-	 */
 	public void showProgress() {
 		reset();
 		add(progressPanel, BorderLayout.CENTER);

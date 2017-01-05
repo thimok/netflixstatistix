@@ -7,12 +7,6 @@ import java.sql.Statement;
 
 public class QueryUtil {
 	
-	/**
-	 * Add a new account to the database
-	 * @param name Account name
-	 * @param address Account address
-	 * @param town Account hometown
-	 */
 	public static void addAccount(String name, String address, String town) {
 		int maxValue = getMaximumNumberFromColumn("abonnement", "AbonneeNr");
 		String query = "INSERT INTO abonnement (AbonneeNr, Naam, Adres, Woonplaats) VALUES (" + (maxValue + 1) + ", '" + name + "', '" + address + "', '" + town + "');";
