@@ -1,6 +1,5 @@
 package main.overviewsix;
 
-import main.overviewone.OneViewItem;
 import main.util.Connectable;
 
 import javax.swing.*;
@@ -8,6 +7,7 @@ import java.sql.ResultSet;
 
 public class SixTransactionResult {
 	static public void displayResultsSix(JEditorPane ta, Object item, JLabel l) {
+		//Prepare SQL query to hit the database
 		String QueryOut =   "SELECT COUNT(*) AS watched " +
 				"FROM voortgang " +
 				"INNER JOIN programma " +
@@ -17,8 +17,11 @@ public class SixTransactionResult {
 				"WHERE voortgang.BekekenPercentage = 100 " +
 				"AND programma.Titel = '" + item +"' ";
 		
+		//Catch the results with a resultset
 		ResultSet rs = Connectable.executeQuery(QueryOut);
 		
+		//Try to print out the results in the JEditorPane
+		//Otherwise throw SQLException and print out the StackTrace
 		if (rs != null) {
 			
 			l.setText("" + item);

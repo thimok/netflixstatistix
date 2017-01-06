@@ -15,19 +15,23 @@ public class WindowsMenuPanel extends JPanel {
 	public WindowsMenuPanel(JFrame mainFrame) {
 		this.mainFrame = mainFrame;
 		
+		//Set Layout, border and background
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 		setBackground(ColorUtil.BACKGROUND_MAIN);
 		
+		//Create new ButtonGroup
 		buttonGroup = new WindowsMenuButtonGroup(mainFrame);
 		add(buttonGroup);
 		
+		//Create and add title label
 		title = new JLabel("STATISTIX AND CHILL");
 		title.setFont(FontUtil.FONT_TITLE);
 		title.setForeground(ColorUtil.TITLE);
 		title.setAlignmentX(Component.CENTER_ALIGNMENT);
 		add(title);
 		
+		//Create and add Version label
 		version = new JLabel(StringUtil.VERSION + " (for " + System.getProperty("os.name") + ")");
 		version.setForeground(ColorUtil.SUBTITLE);
 		version.setFont(FontUtil.FONT_VERSION);
@@ -36,6 +40,7 @@ public class WindowsMenuPanel extends JPanel {
 		
 		add(Box.createVerticalStrut(10));
 		
+		//Create and add User label
 		user = new JLabel("Welcome back, " + System.getProperty("user.name") + "!");
 		user.setForeground(ColorUtil.MAIN_TEXT);
 		user.setFont(FontUtil.FONT_SUBTITLE);

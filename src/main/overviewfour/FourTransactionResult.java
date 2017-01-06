@@ -1,6 +1,5 @@
 package main.overviewfour;
 
-import main.overviewone.OneViewItem;
 import main.util.Connectable;
 
 import javax.swing.*;
@@ -9,6 +8,7 @@ import java.util.ArrayList;
 
 public class FourTransactionResult {
 	static public void displayResultsFour(JEditorPane ta) {
+		//Prepare SQL query to hit the database
 		String query = "SELECT programma.Titel" +
 				" FROM programma" +
 				" INNER JOIN film" +
@@ -16,10 +16,13 @@ public class FourTransactionResult {
 				" WHERE film.Leeftijdsindicatie < 16" +
 				" ORDER BY programma.Tijdsduur DESC;";
 		
+		//Catch the results with a resultset
 		ResultSet rs = Connectable.executeQuery(query);
 		StringBuffer sb = new StringBuffer();
 		ArrayList results = new ArrayList<>();
 		
+		//Try to print out the results in the JEditorPane
+		//Otherwise throw SQLException and print out the StackTrace
 		if (rs != null) {
 			try {
 				while (rs.next()) {

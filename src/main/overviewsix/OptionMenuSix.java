@@ -1,7 +1,5 @@
 package main.overviewsix;
 
-import main.overviewthree.ThreeTransactionResult;
-import main.overviewthree.ThreeTransactionScript;
 import main.util.ColorUtil;
 import main.util.OptionMenuButton;
 import main.util.cbEditor;
@@ -23,11 +21,14 @@ public class OptionMenuSix extends JPanel{
 	private JLabel l;
 	
 	public OptionMenuSix(String labelt, JEditorPane ta, JLabel l) {
+		//Set layout to boxlayout
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		//disambiguate variable references
 		this.ta = ta;
 		this.l = l;
 		
+		//Create contents (Label, combobox filled with the arraylist)
 		JLabel label = new JLabel(labelt);
 		ArrayList list = SixTransactionScript.fillComboBox();
 		JComboBox cb = new JComboBox(list.toArray());
@@ -40,14 +41,17 @@ public class OptionMenuSix extends JPanel{
 		cb.setBorder(BorderFactory.createMatteBorder(0,0,1,0,ColorUtil.HEADER_TEXT));
 		cb.setSelectedIndex(0);
 		
+		//Set back- and foreground color
 		this.setBackground(ColorUtil.BACKGROUND);
 		label.setForeground(ColorUtil.MAIN_TEXT);
 		
+		//Add contents to the panel
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
 	}
 	
+	//Override the combobox properties (look)
 	static class CustomComboBoxUI extends BasicComboBoxUI {
 		public static ComponentUI createUI(JComponent c) {
 			return new OptionMenuSix.CustomComboBoxUI();
@@ -60,6 +64,7 @@ public class OptionMenuSix extends JPanel{
 		}
 	}
 	
+	//When the combobox selection is changed the query will be executed.
 	public class QueryResult implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent e) {

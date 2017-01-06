@@ -25,11 +25,14 @@ public class OptionMenuTwoSecond extends JPanel{
 	private JComboBox cbOther, cb;
 	
 	public OptionMenuTwoSecond(String labelt, JEditorPane ta, JLabel l) {
+		//Set layout to boxlayout
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		//disambiguate variable references
 		this.ta = ta;
 		this.l = l;
 		
+		//Create contents (Label, combobox filled with the arraylist)
 		JLabel label = new JLabel(labelt);
 		ArrayList list = TwoTransactionScript.fillComboBoxTwo();
 		this.cb = new JComboBox(list.toArray());
@@ -42,22 +45,27 @@ public class OptionMenuTwoSecond extends JPanel{
 		cb.setBorder(BorderFactory.createMatteBorder(0,0,1,0,ColorUtil.HEADER_TEXT));
 		cb.setSelectedIndex(0);
 		
+		//Set back- and foreground color
 		this.setBackground(ColorUtil.BACKGROUND);
 		label.setForeground(ColorUtil.MAIN_TEXT);
-
+		
+		//Add contents to the panel
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
 	}
+	
+	//Set the other Combobox for query reasons
 	public void setOtherComboBox(JComboBox cbO) {
 		this.cbOther = cbO;
 	}
 	
+	//Get method for other class to use this combobox
 	public JComboBox getOtherComboBox() {
 		return cb;
 	}
 	
-	
+	//Override the combobox properties (look)
 	static class CustomComboBoxUI extends BasicComboBoxUI {
 		public static ComponentUI createUI(JComponent c) {
 			return new CustomComboBoxUI();
@@ -70,6 +78,7 @@ public class OptionMenuTwoSecond extends JPanel{
 		}
 	}
 	
+	//When the combobox selection is changed the query will be executed.
 	public class QueryResult implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent e) {

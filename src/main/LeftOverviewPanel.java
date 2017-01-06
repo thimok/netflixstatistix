@@ -18,14 +18,18 @@ public class LeftOverviewPanel extends JPanel {
 	public LeftOverviewPanel(MainPanel mp) {
 		this.mainPanel = mp;
 		
+		//Set Layout, background and borders
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(new CompoundBorder(
 				BorderFactory.createMatteBorder(0, 0, 0, 1, ColorUtil.BACKGROUND_MAIN),
 				BorderFactory.createEmptyBorder(5, 5, 15, 19)));
 		setBackground(ColorUtil.BACKGROUND);
 		
+		//Create new Handler to repaint the displayframe
 		KnopHandler kh = new KnopHandler();
 		
+		//Create the menubuttons
+		//Add vertical struts and glues to enhance the layout
 		buttonOverviewOne = new MenuButton(StringUtil.OVERVIEW_ONE, sizeSingle);
 		buttonOverviewOne.setFont(FontUtil.FONT_MENU);
 		buttonOverviewOne.addActionListener(kh);
@@ -90,6 +94,7 @@ public class LeftOverviewPanel extends JPanel {
 		add(Box.createVerticalStrut(10));
 	}
 	
+	//Repaint to the selected panel when the button is pressed
 	class KnopHandler implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {

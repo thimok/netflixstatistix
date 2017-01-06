@@ -1,8 +1,5 @@
 package main.overviewone;
 
-import main.overviewtwo.OptionMenuTwoFirst;
-import main.overviewtwo.TwoTransactionResult;
-import main.overviewtwo.TwoViewItem;
 import main.util.ColorUtil;
 import main.util.OptionMenuButton;
 import main.util.cbEditor;
@@ -23,12 +20,21 @@ public class OptionMenuOne extends JPanel{
 	private JEditorPane ta;
 	private JLabel l;
 	
+	/**
+	 *
+	 * @param labelt
+	 * @param ta
+	 * @param l
+	 */
 	public OptionMenuOne(String labelt, JEditorPane ta, JLabel l) {
+		//Set layout to boxlayout
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		
+		//disambiguate variable references
 		this.ta = ta;
 		this.l = l;
 		
+		//Create contents (Label, combobox filled with the arraylist)
 		JLabel label = new JLabel(labelt);
 		ArrayList list = OneTransactionScript.fillComboBox();
 		JComboBox cb = new JComboBox(list.toArray());
@@ -41,14 +47,17 @@ public class OptionMenuOne extends JPanel{
 		cb.setBorder(BorderFactory.createMatteBorder(0,0,1,0,ColorUtil.HEADER_TEXT));
 		cb.setSelectedIndex(0);
 		
+		//Set back- and foreground color
 		this.setBackground(ColorUtil.BACKGROUND);
 		label.setForeground(ColorUtil.MAIN_TEXT);
-
+		
+		//Add contents to the panel
 		this.add(label);
 		this.add(Box.createHorizontalStrut(20));
 		this.add(cb);
 	}
 	
+	//Override the combobox properties (look)
 	static class CustomComboBoxUI extends BasicComboBoxUI {
 		public static ComponentUI createUI(JComponent c) {
 			return new CustomComboBoxUI();
@@ -61,6 +70,7 @@ public class OptionMenuOne extends JPanel{
 		}
 	}
 	
+	//When the combobox selection is changed the query will be executed.
 	public class QueryResult implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent e) {

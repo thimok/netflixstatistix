@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class OneTransactionScript{
 	
+	//Fill the combobox with the optional titels from the database
 	static public ArrayList fillComboBox() {
 		String QueryIn = "SELECT Titel FROM serie;";
 		String Option = "Titel";

@@ -40,6 +40,7 @@ public class AccountPanel extends JPanel {
 				}
 			});
 			this.add(buttonAdd);
+			
 			JButton buttonChange = new MenuButton("Change account", new Dimension(150, 50));
 			buttonChange.setFont(FontUtil.FONT_MENU);
 			buttonChange.addActionListener(new ActionListener() {
@@ -51,6 +52,7 @@ public class AccountPanel extends JPanel {
 				}
 			});
 			this.add(buttonChange);
+			
 			JButton buttonDelete = new MenuButton("Delete account", new Dimension(150, 50));
 			buttonDelete.setFont(FontUtil.FONT_MENU);
 			buttonDelete.addActionListener(new ActionListener() {

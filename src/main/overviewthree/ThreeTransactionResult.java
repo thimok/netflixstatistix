@@ -1,15 +1,13 @@
 package main.overviewthree;
 
-import main.overviewone.OneViewItem;
 import main.util.Connectable;
 
 import javax.swing.*;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class ThreeTransactionResult {
 	static public void displayResultsThree(JEditorPane ta, Object item, JLabel l) {
+		//Prepare SQL query to hit the database
 		String QueryOut =   "SELECT DISTINCT programma.Titel " +
 				"FROM voortgang " +
 				"INNER JOIN programma " +
@@ -22,10 +20,11 @@ public class ThreeTransactionResult {
 				"ON abonnement.AbonneeNr = profiel.AbonneeNr " +
 				"WHERE abonnement.Naam = '" + item + "';";
 		
-		
+		//Catch the results with a resultset
 		ResultSet rs = Connectable.executeQuery(QueryOut);
 		
-		
+		//Try to print out the results in the JEditorPane
+		//Otherwise throw SQLException and print out the StackTrace
 		if (rs != null) {
 			
 			l.setText("Movies watched by: " + item);

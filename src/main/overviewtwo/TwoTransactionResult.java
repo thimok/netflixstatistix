@@ -1,6 +1,5 @@
 package main.overviewtwo;
 
-import main.overviewone.OneViewItem;
 import main.util.Connectable;
 
 import javax.swing.*;
@@ -10,6 +9,7 @@ import java.util.ArrayList;
 
 public class TwoTransactionResult {
 	static public void displayResultsTwo(ArrayList<TwoViewItem> results, JEditorPane ta, Object serie, Object acc, JLabel l) {
+		//Prepare SQL Query
 		String QueryOut =  "SELECT aflevering.Volgnummer, aflevering.SerieTitel, AVG(voortgang.BekekenPercentage)" +
 				"AS average_bekeken FROM voortgang " +
 				"INNER JOIN profiel " +
@@ -26,13 +26,14 @@ public class TwoTransactionResult {
 				"WHERE aflevering.SerieTitel = '"+ serie +"' AND abonnement.Naam = '" + acc + "' " +
 				"GROUP BY aflevering.ID ";
 		
+		//Catch the results with a resultset if both items are set
 		if(serie != null && acc != null && serie != "" && acc != "") {
 			ResultSet rs = Connectable.executeQuery(QueryOut);
 			
+			//Try to print out the results in the JEditorPane
+			//Otherwise throw SQLException and print out the StackTrace
 			try {
-				
-				
-				boolean empty = true;
+				boolean empty = true; //Flag to check if the item has matches
 				while (rs.next()) {
 					results.add(new TwoViewItem(rs.getInt("Volgnummer"), rs.getDouble("average_bekeken")));
 					empty = false;

@@ -9,6 +9,7 @@ public class cbEditor  extends BasicComboBoxEditor {
 	private JPanel panel = new JPanel();
 	private Object selectedItem;
 	
+	//Override the properties of the normal JCombobox
 	public cbEditor() {
 		
 		label.setOpaque(false);
@@ -20,14 +21,26 @@ public class cbEditor  extends BasicComboBoxEditor {
 		panel.setBackground(ColorUtil.BACKGROUND);
 	}
 	
+	/**
+	 *
+	 * @return the combobox
+	 */
 	public Component getEditorComponent() {
 		return this.panel;
 	}
 	
+	/**
+	 *
+	 * @return the selected item
+	 */
 	public Object getItem() {
 		return "[" + this.selectedItem.toString() + "]";
 	}
 	
+	/**
+	 * Set the selected item
+	 * @param item
+	 */
 	public void setItem(Object item) {
 		this.selectedItem = item;
 		label.setText(item.toString());

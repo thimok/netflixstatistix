@@ -1,14 +1,22 @@
 package main.overviewone;
 
 import main.util.Connectable;
-
 import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OneTransactionResult {
+	
+	/**
+	 *
+	 * @param results
+	 * @param ta
+	 * @param item
+	 * @param l
+	 */
 	static public void displayResultsOne(ArrayList<OneViewItem> results, JEditorPane ta, Object item, JLabel l) {
+		//Prepare SQL query to hit the database
 		String QueryOut =   "SELECT aflevering.Volgnummer, aflevering.SerieTitel, AVG(voortgang.BekekenPercentage) " +
 				"AS average_bekeken FROM voortgang " +
 				"INNER JOIN profiel " +
@@ -20,8 +28,11 @@ public class OneTransactionResult {
 				"WHERE aflevering.SerieTitel = '" + item + "' " +
 				"GROUP BY aflevering.ID;";
 		
+		//Catch the results with a resultset
 		ResultSet rs = Connectable.executeQuery(QueryOut);
 		
+		//Try to print out the results in the JEditorPane
+		//Otherwise throw SQLException and print out the StackTrace
 		try {
 			
 			boolean empty = true;

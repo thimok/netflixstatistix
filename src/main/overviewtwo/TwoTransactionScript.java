@@ -5,6 +5,7 @@ import main.util.Connectable;
 import java.util.ArrayList;
 
 public class TwoTransactionScript {
+	//Fill first combobox with Accountnames from the database
 	static public ArrayList fillComboBoxOne() {
 		String QueryIn = "SELECT Naam FROM Abonnement;";
 		String Option = "Naam";
@@ -14,6 +15,8 @@ public class TwoTransactionScript {
 		return rs;
 		
 	}
+	
+	//Fill second combobox with Serietitels from the database
 	static public ArrayList fillComboBoxTwo() {
 		String QueryIn = "SELECT Titel FROM serie;";
 		String Option = "Titel";

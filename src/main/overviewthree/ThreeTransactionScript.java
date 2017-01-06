@@ -5,6 +5,7 @@ import main.util.Connectable;
 import java.util.ArrayList;
 
 public class ThreeTransactionScript {
+	//Fill the combobox with the optional accountnames from the database
 	static public ArrayList fillComboBox() {
 		String QueryIn = "SELECT Naam FROM Abonnement;";
 		String Option = "Naam";

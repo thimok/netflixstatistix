@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class cbRenderer extends JLabel implements ListCellRenderer {
+	//Override the properties of the normal JCombobox
 	public cbRenderer() {
 		setOpaque(true);
 		setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 14));
@@ -11,6 +12,7 @@ public class cbRenderer extends JLabel implements ListCellRenderer {
 		setForeground(ColorUtil.MAIN_TEXT);
 	}
 	
+	//Override the properties of the normal JCombobox
 	@Override
 	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 		setText(value.toString());

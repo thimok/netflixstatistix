@@ -19,6 +19,7 @@ public class WindowsMenuButtonGroup extends JPanel {
 	private Icon max, wr, min, close, favicon;
 	
 	public WindowsMenuButtonGroup(JFrame mainFrame) {
+		//Load icons for the buttons
 		IconFontSwing.register(FontAwesome.getIconFont());
 		this.min = IconFontSwing.buildIcon(FontAwesome.WINDOW_MINIMIZE, 10, ColorUtil.MAIN_TEXT);
 		this.close = IconFontSwing.buildIcon(FontAwesome.TIMES, 10, ColorUtil.MAIN_TEXT);
@@ -28,11 +29,14 @@ public class WindowsMenuButtonGroup extends JPanel {
 		
 		this.mainFrame = mainFrame;
 		
+		//Set the layout and background
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		this.setBackground(ColorUtil.BACKGROUND_MAIN);
 		
+		//Add horizontalstrut
 		add(Box.createHorizontalStrut(5));
 		
+		//Create the application Title + (fav)icon
 		header = new JLabel("STATISTIX AND CHILL");
 		header.setIcon(favicon);
 		header.setForeground(ColorUtil.HEADER_TEXT);
@@ -41,6 +45,7 @@ public class WindowsMenuButtonGroup extends JPanel {
 		
 		add(Box.createHorizontalGlue());
 		
+		//Create new handler and buttons to operate window functions (Closing, minimizing and resizing)
 		KnopHandler kh = new KnopHandler();
 		
 		minimizeButton = new WindowsMenuButton(min);
@@ -56,6 +61,7 @@ public class WindowsMenuButtonGroup extends JPanel {
 		add(closeButton);
 	}
 	
+	//Handler to operate closing, minimizing and resizing of the frame
 	class KnopHandler implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {

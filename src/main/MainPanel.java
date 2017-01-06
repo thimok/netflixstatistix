@@ -33,11 +33,13 @@ public class MainPanel extends JPanel {
 	private JFrame mainFrame;
 
 	public MainPanel(JFrame mainFrame) {
+		//Set Layout and Background
 		setLayout(new BorderLayout());
 		setBackground(ColorUtil.BACKGROUND);
 		
 		this.mainFrame = mainFrame;
-		//Nieuwe panels worden hieronder gemaakt
+		
+		//Create all Panels
 		leftControl = new LeftOverviewPanel(this);
 		footerPanel = new FooterPanel();
 		windowsMenuPanel = new WindowsMenuPanel(mainFrame);
@@ -51,19 +53,20 @@ public class MainPanel extends JPanel {
 		profilePanel = new ProfilePanel();
 		progressPanel = new ProgressPanel();
 
-		//Hieronder komt wordt een label gemaakt
-		placeholder = new JLabel("Click an item on the left to view the statistix...");
+		//Create welcome/placeholder label
+		placeholder = new JLabel("<html><center>Welcome to Netflixstatistix<br>Feel free to select an overview on the left</center></html>");
 		placeholder.setFont(FontUtil.FONT_PLACEHOLDER);
 		placeholder.setForeground(ColorUtil.MAIN_TEXT);
 		placeholder.setHorizontalAlignment(JLabel.CENTER);
 
-		//Hier wordt de worden de panels toegevoegd aan de mainpanel
+		//Add all panels to the borderlayout
 		add(windowsMenuPanel, BorderLayout.NORTH);
 		add(leftControl, BorderLayout.WEST);
 		add(footerPanel, BorderLayout.SOUTH);
 		add(placeholder, BorderLayout.CENTER);
 	}
 
+	//Reset all panels and revalidate and repaint the mainframe
 	public void reset() {
 		remove(onePanel);
 		remove(twoPanel);
@@ -84,6 +87,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel one
 	public void showOne() {
 		reset();
 		add(onePanel, BorderLayout.CENTER);
@@ -92,6 +96,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel two
 	public void showTwo() {
 		reset();
 		add(twoPanel, BorderLayout.CENTER);
@@ -100,6 +105,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel three
 	public void showThree() {
 		reset();
 		add(threePanel, BorderLayout.CENTER);
@@ -108,6 +114,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel four
 	public void showFour() {
 		reset();
 		add(fourPanel, BorderLayout.CENTER);
@@ -116,6 +123,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel five
 	public void showFive() {
 		reset();
 		add(fivePanel, BorderLayout.CENTER);
@@ -124,6 +132,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show overviewpanel six
 	public void showSix() {
 		reset();
 		add(sixPanel, BorderLayout.CENTER);
@@ -132,6 +141,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show account-overviewpanel
 	public void showAccount() {
 		reset();
 		add(accountPanel, BorderLayout.CENTER);
@@ -140,6 +150,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show profile-overviewpanel
 	public void showProfile() {
 		reset();
 		add(profilePanel, BorderLayout.CENTER);
@@ -148,6 +159,7 @@ public class MainPanel extends JPanel {
 		repaint();
 	}
 	
+	//Show progress-overviewpanel
 	public void showProgress() {
 		reset();
 		add(progressPanel, BorderLayout.CENTER);

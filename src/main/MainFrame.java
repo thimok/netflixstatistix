@@ -8,32 +8,31 @@ import javax.swing.plaf.nimbus.State;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-// Hieronder wordt het Jframe gemaakt
+
 public class MainFrame extends JFrame {
 	
 	public MainFrame() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
+		//Create and run mainframe when the application is started
+		Runnable runnable = () -> {
 
-				JFrame frame = MainFrame.this;
-				frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-				frame.setSize(1500, 1000);
-				frame.setPreferredSize(new Dimension(1500, 1000));
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setTitle("Statistix and chill " + StringUtil.VERSION);
-				frame.setContentPane(new MainPanel(frame));
-				frame.setUndecorated(true);
-				
-				FrameDragListener frameDragListener = new FrameDragListener();
-				frame.addMouseListener(frameDragListener);
-				frame.addMouseMotionListener(frameDragListener);
-				frame.setVisible(true);
-			}
+			JFrame frame = MainFrame.this;
+			frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+			frame.setSize(1500, 1000);
+			frame.setPreferredSize(new Dimension(1500, 1000));
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setTitle("Statistix and chill " + StringUtil.VERSION);
+			frame.setContentPane(new MainPanel(frame));
+			frame.setUndecorated(true);
+			
+			FrameDragListener frameDragListener = new FrameDragListener();
+			frame.addMouseListener(frameDragListener);
+			frame.addMouseMotionListener(frameDragListener);
+			frame.setVisible(true);
 		};
 		SwingUtilities.invokeLater(runnable);
 	}
 	
+	//Make a listenere to drag the window around
 	class FrameDragListener extends MouseAdapter {
 		private Point mouseDownCompCoords = null;
 		
