@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2016 at 10:10 AM
+-- Generation Time: Jan 08, 2017 at 11:25 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -242,23 +242,23 @@ CREATE TABLE `voortgang` (
 --
 
 INSERT INTO `voortgang` (`Profielnaam`, `AbonneeNr`, `ProgrammaID`, `BekekenPercentage`) VALUES
-('BatKight', 2, 12, 100),
-('BatKight', 2, 16, 100),
-('ChildofDestiny', 7, 20, 58),
-('Devonator', 2, 14, 100),
-('Devonator', 2, 18, 100),
-('Gman Martina', 8, 4, 78),
-('Henkie', 6, 2, 87),
-('HenkLover107', 6, 9, 58),
-('Luka Skywalker', 10, 18, 74),
-('PAINintheAss', 1, 22, 78),
+('BatKight', 2, 2, 100),
+('BatKight', 2, 5, 100),
+('ChildofDestiny', 7, 20, 100),
+('Devonator', 2, 2, 100),
+('Devonator', 2, 3, 100),
+('Gman Martina', 8, 4, 100),
+('Henkie', 6, 2, 100),
+('HenkLover107', 6, 9, 100),
+('Luka Skywalker', 10, 1, 100),
+('PAINintheAss', 1, 6, 100),
 ('RageObiTwan', 9, 15, 95),
 ('Sinterclass', 3, 1, 100),
 ('Sinterclass', 3, 9, 98),
 ('Sinterclass', 3, 10, 12),
-('StoereJoost2008', 5, 4, 34),
+('StoereJoost2008', 5, 4, 100),
 ('Sven902', 4, 3, 20),
-('Sven902', 4, 4, 10),
+('Sven902', 4, 4, 100),
 ('Sven902', 4, 5, 98),
 ('Wolfhunter82', 2, 23, 100);
 
