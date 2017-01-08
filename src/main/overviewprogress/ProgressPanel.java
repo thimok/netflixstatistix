@@ -21,11 +21,18 @@ public class ProgressPanel extends JPanel {
 		updateState();
 	}
 	
+	/**
+	 * Change the current state of this panel
+	 * @param state new state integer
+	 */
 	public void setState(int state) {
 		this.state = state;
 		updateState();
 	}
 	
+	/**
+	 * Method to show the correct items on the panel, according to the current state
+	 */
 	public void updateState() {
 		if (state == 0) {
 			removeAll();

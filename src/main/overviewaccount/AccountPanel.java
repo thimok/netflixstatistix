@@ -21,11 +21,18 @@ public class AccountPanel extends JPanel {
 		updateState();
 	}
 	
+	/**
+	 * Set state of the panel
+	 * @param state state integer
+	 */
 	public void setState(int state) {
 		this.state = state;
 		updateState();
 	}
 	
+	/**
+	 * Update state. Checks which state is active, then shows the correct items on the screen.
+	 */
 	public void updateState() {
 		if (state == 0) {
 			removeAll();

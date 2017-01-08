@@ -11,7 +11,7 @@ public class OneViewItem {
 	}
 	
 	/**
-	 *
+	 * Rewrite String to the season and episode format
 	 * @return String with the Episode and Season
 	 */
 	public String getSeasonEpisode() {
@@ -19,7 +19,7 @@ public class OneViewItem {
 	}
 	
 	/**
-	 *
+	 * Get the average watched from the serie
 	 * @return Double with the average percentage of the item being watched
 	 */
 	public double getGemiddeldbekeken() {

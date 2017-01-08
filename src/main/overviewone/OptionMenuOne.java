@@ -20,12 +20,6 @@ public class OptionMenuOne extends JPanel{
 	private JEditorPane ta;
 	private JLabel l;
 	
-	/**
-	 *
-	 * @param labelt
-	 * @param ta
-	 * @param l
-	 */
 	public OptionMenuOne(String labelt, JEditorPane ta, JLabel l) {
 		//Set layout to boxlayout
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));

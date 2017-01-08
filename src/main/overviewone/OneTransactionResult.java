@@ -8,13 +8,6 @@ import java.util.ArrayList;
 
 public class OneTransactionResult {
 	
-	/**
-	 *
-	 * @param results
-	 * @param ta
-	 * @param item
-	 * @param l
-	 */
 	static public void displayResultsOne(ArrayList<OneViewItem> results, JEditorPane ta, Object item, JLabel l) {
 		//Prepare SQL query to hit the database
 		String QueryOut =   "SELECT aflevering.Volgnummer, aflevering.SerieTitel, AVG(voortgang.BekekenPercentage) " +

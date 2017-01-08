@@ -25,11 +25,18 @@ public class ProfilePanel extends JPanel {
 		updateState();
 	}
 	
+	/**
+	 * Set the state of the panel.
+	 * @param state new state integer
+	 */
 	public void setState(int state) {
 		this.state = state;
 		updateState();
 	}
 	
+	/**
+	 * Show the correct items on the panel according to the current state.
+	 */
 	public void updateState() {
 		if (state == 0) {
 			removeAll();

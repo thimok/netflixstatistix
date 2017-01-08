@@ -9,6 +9,7 @@ public class QueryUtil {
 	
 	//--------------------------------------------------------------------------------------
 	//  All queries for the CRUD operations in the Profile, Account and Progress overviews
+	//  They are all very simple and the name of the method says all it does
 	//--------------------------------------------------------------------------------------
 	
 	public static void addAccount(String name, String address, String town) {
